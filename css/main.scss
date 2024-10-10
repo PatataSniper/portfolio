@@ -1,0 +1,603 @@
+@use "global";
+@use "variables";
+
+h3 {
+	font-weight: 600;
+	font-size: 1.3rem;
+	color: variables.$text-secondary-color;
+}
+
+.wrapper {
+	margin: 0 1rem;
+}
+
+.title {
+	font-size: 2rem;
+	color: variables.$primary-color;
+}
+
+// Header section
+header {
+	padding: 1.7rem 0 1.7rem;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		aside {
+			position: fixed;
+			right: 0;
+			top: 0;
+			transition: transform 0.6s;
+			transform: translateX(100%);
+			background-color: variables.$aside-background-color;
+			width: 69%;
+			height: 100vh;
+			z-index: 2;
+
+			nav {
+				padding: 2rem;
+				display: flex;
+				flex-direction: column;
+
+				a.close-btn {
+					font-size: 4rem;
+					align-self: end;
+				}
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					gap: 2rem;
+				}
+			}
+		}
+
+		aside.show {
+			transform: translateX(0);
+		}
+
+		svg {
+			width: 2.2rem;
+			height: 2rem;
+		}
+	}
+}
+
+// Hero section
+section.hero {
+	padding: 1.7rem 0 8rem;
+
+	.hero-card {
+		border-radius: 10px;
+		padding: 1.2rem;
+		background-color: variables.$tertiary-background-color;
+
+		img {
+			width: 100%;
+			object-fit: cover;
+			border-radius: 10px;
+		}
+
+		.secondary-hero-img {
+			display: none;
+		}
+
+		.hero-info {
+			text-align: center;
+			margin-top: 2rem;
+
+			.hero-info-main {
+				text-align: center;
+
+				h2 {
+					font-weight: bold;
+					font-size: 2.2rem;
+					margin: 1.2rem 0;
+				}
+			}
+
+			.hero-info-cta {
+				display: flex;
+				margin: 3rem 0 2rem;
+				justify-content: center;
+				gap: 10%;
+
+				a.proyects-cta {
+					border-radius: 25px;
+					background-color: variables.$primary-color;
+					padding: 0.7rem 1rem;
+				}
+
+				a.lets-talk-cta {
+					border-radius: 25px;
+					border: 2px solid variables.$text-secondary-color;
+					padding: 0.7rem 1rem;
+				}
+			}
+		}
+	}
+}
+
+// Technologies section
+section.technologies {
+	position: relative;
+	background-color: variables.$secondary-background-color;
+	padding: 1.7rem 0 8rem;
+
+	.secondary-background {
+		position: absolute;
+		top: -8rem;
+		z-index: -1;
+		// left: -15rem;
+		width: 100%;
+
+		svg {
+			width: 100%;
+			// height: 100%;
+		}
+	}
+
+	.wrapper {
+		>h2 {
+			text-align: center;
+			font-size: 2.5rem;
+			color: variables.$text-darker-color;
+			text-transform: uppercase;
+		}
+
+		.technologies-body {
+			display: grid;
+			gap: 2rem;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(6, auto);
+
+			.tech-card {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				border-radius: 10px;
+				background-color: variables.$tertiary-background-color;
+
+				.tech-logo-container {
+					display: flex;
+					place-content: center;
+					padding: 10%;
+
+					svg,
+					img {
+						width: 80%;
+					}
+				}
+
+				.tech-name {
+					text-align: center;
+					background-color: variables.$card-footer-background-color;
+					border-bottom-left-radius: 10px;
+					border-bottom-right-radius: 10px;
+					padding: 1.5rem;
+					font-size: 2rem;
+				}
+			}
+
+			.tech-description {
+				border-radius: 10px;
+				background-color: variables.$card-footer-background-color;
+				padding: 10%;
+
+				h3 {
+					margin-top: 0;
+					font-size: 2rem;
+				}
+			}
+
+			:nth-child(5),
+			:nth-child(8),
+			:nth-child(11) {
+				grid-column: 1/3;
+				padding: 7%;
+			}
+		}
+	}
+}
+
+// Works section
+section.works {
+	padding: 1.7rem 0 2rem;
+
+	.wrapper {
+		>h2 {
+			text-align: center;
+			font-size: 2.5rem;
+			text-transform: uppercase;
+		}
+
+		.nav-arrow {
+			display: none;
+		}
+
+		.work-card {
+			display: flex;
+			flex-direction: column-reverse;
+			border-top: 1px solid variables.$card-footer-background-color;
+			padding: 1.5rem 0;
+
+			img {
+				border-radius: 12px;
+			}
+
+			.work-description {
+				h2 {
+					font-size: 1.8rem;
+					margin: 0.7rem 0 0.7rem 0;
+				}
+
+				h3 {
+					margin-top: 0.7rem;
+				}
+
+				p {
+					margin-bottom: 1rem;
+				}
+
+				ul>li {
+					list-style: initial;
+				}
+			}
+		}
+
+		.work-card:nth-of-type(n) {
+			padding-bottom: 3rem;
+			border-bottom: 1px dashed variables.$card-footer-background-color;
+		}
+	}
+}
+
+// Footer
+footer {
+	padding-bottom: 1rem;
+
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		align-items: center;
+		gap: 1rem;
+
+		.title {
+			grid-column: 1/3;
+			text-align: center;
+		}
+
+		p {
+			font-size: 1.4rem;
+		}
+
+		.social-media-links {
+			display: flex;
+			gap: 1rem;
+
+			img {
+				width: 2.5rem;
+				height: 2.5rem;
+			}
+		}
+
+		:nth-child(even) {
+			justify-content: end;
+		}
+	}
+}
+
+// Let's talk floating button
+a.floating-lets-talk-btn {
+	width: 3.8rem;
+	height: 3.8rem;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1;
+	display: none; // Temporary until decide how to not overlap elements
+}
+
+// Tablet version
+@media only screen and (min-width: variables.$tablet-screen-size) {
+	.wrapper {
+		margin: 0 3rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	// Header section
+	header {
+		padding: 2.2rem 0 2.2rem;
+
+		.wrapper {
+			aside {
+				position: relative;
+				height: auto;
+				right: unset;
+				top: unset;
+				transition: unset;
+				transform: unset;
+				width: auto;
+				background-color: unset;
+
+				nav {
+					flex-direction: row;
+					padding: 0;
+
+					a.close-btn {
+						display: none;
+					}
+
+					ul {
+						flex-direction: row;
+					}
+				}
+			}
+
+			.hamburger-menu-btn {
+				display: none;
+			}
+		}
+	}
+
+	// Hero section
+	section.hero {
+		padding: 2.3rem 0 8rem;
+
+		.hero-card {
+			display: flex;
+			gap: 4rem;
+
+			img {
+				width: 33%;
+				max-width: 28rem;
+			}
+
+			.hero-info {
+				align-self: center;
+
+				.hero-info-main {
+					text-align: left;
+
+					h2 {
+						font-size: 2.5rem;
+					}
+				}
+
+				.hero-info-cta {
+					justify-content: left;
+					gap: 2.2rem;
+				}
+			}
+		}
+	}
+
+	// Technologies section
+	section.technologies {
+		.wrapper {
+
+			h2 {
+				text-align: left;
+			}
+
+			.technologies-body {
+				grid-template-areas:
+					" tech-1 tech-2 frontend-tech-description"
+					" tech-3 tech-4 frontend-tech-description"
+					" tech-5 tech-6 backend-tech-description"
+					" tech-7 db-tech-description db-tech-description"
+					" tech-8 db-tech-description db-tech-description";
+				grid-template-rows: unset;
+				grid-template-columns: repeat(2, 25%) 1fr;
+
+				.tech-description {
+					background-color: unset;
+
+					h3 {
+						color: variables.$text-darker-color;
+					}
+
+					p {
+						color: variables.$text-darker-color;
+					}
+				}
+
+				:nth-child(1) {
+					grid-area: tech-1;
+				}
+
+				:nth-child(2) {
+					grid-area: tech-2;
+				}
+
+				:nth-child(3) {
+					grid-area: tech-3;
+				}
+
+				:nth-child(4) {
+					grid-area: tech-4;
+				}
+
+				:nth-child(5) {
+					grid-area: frontend-tech-description;
+				}
+
+				:nth-child(6) {
+					grid-area: tech-5;
+				}
+
+				:nth-child(7) {
+					grid-area: tech-6;
+				}
+
+				:nth-child(8) {
+					grid-area: backend-tech-description;
+				}
+
+				:nth-child(9) {
+					grid-area: tech-7;
+				}
+
+				:nth-child(10) {
+					grid-area: tech-8;
+				}
+
+				:nth-child(11) {
+					grid-area: db-tech-description;
+				}
+
+				:nth-child(5),
+				:nth-child(8),
+				:nth-child(11) {
+					padding: 1.5rem;
+				}
+
+				:nth-child(11) {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+			}
+		}
+	}
+
+	// Works section
+	section.works {
+
+		.wrapper {
+
+			>h2 {
+				text-align: left;
+			}
+
+			.work-card {
+				flex-direction: row;
+				gap: 1rem;
+
+				img {
+					width: 60%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	// Footer section
+	footer {
+		.wrapper {
+			.title {
+				grid-column: 1/2;
+				text-align: left;
+			}
+
+			nav.main {
+				display: initial;
+
+				ul {
+					display: flex;
+					gap: 1.5rem;
+					justify-content: right;
+				}
+			}
+		}
+	}
+}
+
+// Desktop version
+@media only screen and (min-width: variables.$desktop-screen-size) {
+	.title {
+		font-size: 2.5rem;
+	}
+
+	.wrapper {
+		margin: 0 auto;
+		padding: 0 5rem;
+		max-width: 120rem;
+	}
+
+	// Hero section
+	section.hero {
+		padding: 2.3rem 0 8rem;
+
+		.hero-card {
+
+			.secondary-hero-img {
+				display: initial;
+			}
+
+			.hero-info {
+				align-self: center;
+
+				.hero-info-main {
+					text-align: center;
+				}
+
+				.hero-info-cta {
+					justify-content: center;
+				}
+			}
+		}
+	}
+
+	// Technologies section
+	section.technologies {
+
+		.secondary-background {
+			top: -12rem;
+		}
+
+		.wrapper {
+			>h2 {
+				font-size: 4rem;
+			}
+
+			.technologies-body {
+
+				.tech-description {
+
+					h3 {
+						font-size: 3rem;
+					}
+				}
+			}
+		}
+	}
+
+	// Works section
+	section.works {
+
+		.wrapper {
+
+			>h2 {
+				font-size: 4rem;
+			}
+
+			.work-card {
+				flex-direction: row;
+				gap: 1rem;
+
+				.work-description {
+					h2 {
+						font-size: 3rem;
+						margin-top: 0;
+					}
+
+					h3 {
+						font-size: 2.5rem;
+					}
+				}
+
+				img {
+					width: 60%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}

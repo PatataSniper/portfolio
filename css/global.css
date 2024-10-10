@@ -1,0 +1,66 @@
+html {
+  font-family: "Inconsolata", monospace;
+  font-size: 62.5%;
+  font-weight: 300;
+}
+
+body {
+  background-color: #222222;
+  color: #FDFDFD;
+}
+
+a {
+  text-decoration: none;
+  color: #FDFDFD;
+  font-size: 1.6rem;
+}
+
+p {
+  margin: 0;
+  line-height: 150%;
+  font-size: 1.3rem;
+}
+
+h2, h3 {
+  line-height: 125%;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+a.active {
+  color: #48E93A;
+}
+
+a.active::before {
+  content: "//";
+  padding-right: 10px;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 610px) {
+  p {
+    margin: 0;
+    line-height: 150%;
+    font-size: 1.5rem;
+  }
+  .hide-mobile {
+    display: initial;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  p {
+    font-size: 1.8rem;
+  }
+  a {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
+}/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,76 @@
+@use 'variables';
+
+// Mobile version
+html {
+    font-family: variables.$font-family-general;
+    font-size: 62.5%;
+    font-weight: 300;
+}
+
+body {
+    background-color: variables.$primary-background-color;
+    color: variables.$text-base-color;
+}
+
+a {
+    text-decoration: none;
+    color: variables.$text-base-color;
+    font-size: 1.6rem;
+}
+
+p {
+    margin: 0;
+    line-height: 150%;
+    font-size: 1.3rem;
+}
+
+h2, h3 {
+    line-height: 125%;
+    font-weight: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a.active  {
+    color: variables.$text-selected-color;
+}
+
+a.active::before {
+    content: "//";
+    // color: blue;
+    padding-right: 10px;
+}
+
+.hide-mobile {
+    display: none;
+}
+
+// Tablet version
+@media only screen and (min-width: variables.$tablet-screen-size) {
+    p {
+        margin: 0;
+        line-height: 150%;
+        font-size: 1.5rem;
+    }
+
+    .hide-mobile {
+        display: initial;
+    }
+}
+
+// Desktop version
+@media only screen and (min-width: variables.$desktop-screen-size) { 
+    p {
+        font-size: 1.8rem;
+    }
+
+    a {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+		font-size: 1.7rem;
+	}
+}
