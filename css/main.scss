@@ -214,10 +214,15 @@ section.works {
 	padding: 1.7rem 0 2rem;
 
 	.wrapper {
+		// This will be the only section where the .wrapper will not have a margin,
+		// instead the .work-card class will have it, this will leave a separation
+		// gap between cards during carousel transition.
+		margin: 0;
 		>h2 {
 			text-align: center;
 			font-size: 2.5rem;
 			text-transform: uppercase;
+			margin: 0 1rem;
 		}
 
 		.nav-arrow {
@@ -229,6 +234,7 @@ section.works {
 			flex-direction: column-reverse;
 			border-top: 1px solid variables.$card-footer-background-color;
 			padding: 1.5rem 0;
+			margin: 0 1rem;
 
 			img {
 				border-radius: 12px;
@@ -482,11 +488,13 @@ a.floating-lets-talk-btn {
 
 			>h2 {
 				text-align: left;
+				margin: 0 3rem;
 			}
 
 			.work-card {
 				flex-direction: row;
 				gap: 1rem;
+				margin: 0 3rem;
 
 				img {
 					width: 60%;
@@ -581,14 +589,18 @@ a.floating-lets-talk-btn {
 	section.works {
 
 		.wrapper {
+			// Gain specificity over the mobile version of this section's wrapper
+			margin: 0 auto;
 
 			>h2 {
 				font-size: 4rem;
+				margin: 0;
 			}
 
 			.work-card {
 				flex-direction: row;
 				gap: 1rem;
+				margin: 0;
 
 				.work-description {
 					h2 {
