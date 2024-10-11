@@ -99,7 +99,6 @@ section.hero {
 				h2 {
 					font-weight: bold;
 					font-size: 2.2rem;
-					margin: 1.2rem 0;
 				}
 			}
 
@@ -159,6 +158,7 @@ section.technologies {
 			gap: 2rem;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(6, auto);
+			margin-top: 5rem;
 
 			.tech-card {
 				display: flex;
@@ -222,48 +222,49 @@ section.works {
 			text-align: center;
 			font-size: 2.5rem;
 			text-transform: uppercase;
-			margin: 0 1rem;
+			margin: 3rem 1rem;
 		}
 
-		.nav-arrow {
-			display: none;
-		}
-
-		.work-card {
-			display: flex;
-			flex-direction: column-reverse;
-			border-top: 1px solid variables.$card-footer-background-color;
-			padding: 1.5rem 0;
-			margin: 0 1rem;
-
-			img {
-				border-radius: 12px;
+		.carousel {
+			margin-top: 3rem;
+			.nav-arrow {
+				display: none;
 			}
-
-			.work-description {
-				h2 {
-					font-size: 2rem;
-					margin: 0.7rem 0 0.7rem 0;
+	
+			.work-card {
+				display: flex;
+				flex-direction: column-reverse;
+				padding: 1.5rem 0;
+				margin: 0 1rem;
+	
+				img {
+					border-radius: 12px;
 				}
-
-				h3 {
-					margin-top: 0.7rem;
-					font-size: 1.6rem;
-				}
-
-				p {
-					margin-bottom: 1rem;
-				}
-
-				ul>li {
-					list-style: initial;
+	
+				.work-description {
+					h2 {
+						font-size: 2rem;
+						margin: 0.7rem 0 0.7rem 0;
+					}
+	
+					h3 {
+						margin-top: 0.7rem;
+						font-size: 1.6rem;
+					}
+	
+					p {
+						margin-bottom: 1rem;
+					}
+	
+					ul>li {
+						list-style: initial;
+					}
 				}
 			}
-		}
-
-		.work-card:nth-of-type(n) {
-			padding-bottom: 3rem;
-			border-bottom: 1px dashed variables.$card-footer-background-color;
+	
+			.work-card:nth-of-type(n) {
+				padding-bottom: 3rem;
+			}
 		}
 	}
 }
@@ -488,17 +489,21 @@ a.floating-lets-talk-btn {
 
 			>h2 {
 				text-align: left;
-				margin: 0 3rem;
+				margin-left: 3rem;
+				margin-right: 3rem;
 			}
-
-			.work-card {
-				flex-direction: row;
-				gap: 1rem;
-				margin: 0 3rem;
-
-				img {
-					width: 60%;
-					object-fit: cover;
+			
+			.carousel {
+				
+				.work-card {
+					flex-direction: row;
+					gap: 1rem;
+					margin: 0 3rem;
+	
+					img {
+						width: 60%;
+						object-fit: cover;
+					}
 				}
 			}
 		}
@@ -594,28 +599,32 @@ a.floating-lets-talk-btn {
 
 			>h2 {
 				font-size: 4rem;
-				margin: 0;
+				margin-left: 0;
+				margin-right: 0;
 			}
 
-			.work-card {
-				flex-direction: row;
-				gap: 1rem;
-				margin: 0;
+			.carousel {
 
-				.work-description {
-					h2 {
-						font-size: 3rem;
-						margin-top: 0;
+				.work-card {
+					flex-direction: row;
+					gap: 1rem;
+					margin: 0;
+	
+					.work-description {
+						h2 {
+							font-size: 3rem;
+							margin-top: 0;
+						}
+	
+						h3 {
+							font-size: 1.6rem;
+						}
 					}
-
-					h3 {
-						font-size: 1.6rem;
+	
+					img {
+						width: 60%;
+						object-fit: cover;
 					}
-				}
-
-				img {
-					width: 60%;
-					object-fit: cover;
 				}
 			}
 		}

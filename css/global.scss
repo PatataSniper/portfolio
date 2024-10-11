@@ -29,6 +29,10 @@ h2, h3 {
     font-weight: normal;
 }
 
+h2 {
+    margin: 1.2rem 0;
+}
+
 li {
     list-style: none;
 }
@@ -45,6 +49,10 @@ a.active::before {
 
 .hide-mobile {
     display: none;
+}
+
+.carousel-indicators {
+    margin-bottom: 0;
 }
 
 // Tablet version

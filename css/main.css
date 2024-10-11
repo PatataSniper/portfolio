@@ -26,6 +26,10 @@ h2, h3 {
   font-weight: normal;
 }
 
+h2 {
+  margin: 1.2rem 0;
+}
+
 li {
   list-style: none;
 }
@@ -41,6 +45,10 @@ a.active::before {
 
 .hide-mobile {
   display: none;
+}
+
+.carousel-indicators {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 610px) {
@@ -152,7 +160,6 @@ section.hero .hero-card .hero-info .hero-info-main {
 section.hero .hero-card .hero-info .hero-info-main h2 {
   font-weight: bold;
   font-size: 2.2rem;
-  margin: 1.2rem 0;
 }
 section.hero .hero-card .hero-info .hero-info-cta {
   display: flex;
@@ -198,6 +205,7 @@ section.technologies .wrapper .technologies-body {
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, auto);
+  margin-top: 5rem;
 }
 section.technologies .wrapper .technologies-body .tech-card {
   display: flex;
@@ -249,38 +257,39 @@ section.works .wrapper > h2 {
   text-align: center;
   font-size: 2.5rem;
   text-transform: uppercase;
-  margin: 0 1rem;
+  margin: 3rem 1rem;
 }
-section.works .wrapper .nav-arrow {
+section.works .wrapper .carousel {
+  margin-top: 3rem;
+}
+section.works .wrapper .carousel .nav-arrow {
   display: none;
 }
-section.works .wrapper .work-card {
+section.works .wrapper .carousel .work-card {
   display: flex;
   flex-direction: column-reverse;
-  border-top: 1px solid #353536;
   padding: 1.5rem 0;
   margin: 0 1rem;
 }
-section.works .wrapper .work-card img {
+section.works .wrapper .carousel .work-card img {
   border-radius: 12px;
 }
-section.works .wrapper .work-card .work-description h2 {
+section.works .wrapper .carousel .work-card .work-description h2 {
   font-size: 2rem;
   margin: 0.7rem 0 0.7rem 0;
 }
-section.works .wrapper .work-card .work-description h3 {
+section.works .wrapper .carousel .work-card .work-description h3 {
   margin-top: 0.7rem;
   font-size: 1.6rem;
 }
-section.works .wrapper .work-card .work-description p {
+section.works .wrapper .carousel .work-card .work-description p {
   margin-bottom: 1rem;
 }
-section.works .wrapper .work-card .work-description ul > li {
+section.works .wrapper .carousel .work-card .work-description ul > li {
   list-style: initial;
 }
-section.works .wrapper .work-card:nth-of-type(n) {
+section.works .wrapper .carousel .work-card:nth-of-type(n) {
   padding-bottom: 3rem;
-  border-bottom: 1px dashed #353536;
 }
 
 footer {
@@ -441,14 +450,15 @@ a.floating-lets-talk-btn {
   }
   section.works .wrapper > h2 {
     text-align: left;
-    margin: 0 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
-  section.works .wrapper .work-card {
+  section.works .wrapper .carousel .work-card {
     flex-direction: row;
     gap: 1rem;
     margin: 0 3rem;
   }
-  section.works .wrapper .work-card img {
+  section.works .wrapper .carousel .work-card img {
     width: 60%;
     -o-object-fit: cover;
        object-fit: cover;
@@ -504,21 +514,22 @@ a.floating-lets-talk-btn {
   }
   section.works .wrapper > h2 {
     font-size: 4rem;
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
-  section.works .wrapper .work-card {
+  section.works .wrapper .carousel .work-card {
     flex-direction: row;
     gap: 1rem;
     margin: 0;
   }
-  section.works .wrapper .work-card .work-description h2 {
+  section.works .wrapper .carousel .work-card .work-description h2 {
     font-size: 3rem;
     margin-top: 0;
   }
-  section.works .wrapper .work-card .work-description h3 {
+  section.works .wrapper .carousel .work-card .work-description h3 {
     font-size: 1.6rem;
   }
-  section.works .wrapper .work-card img {
+  section.works .wrapper .carousel .work-card img {
     width: 60%;
     -o-object-fit: cover;
        object-fit: cover;
