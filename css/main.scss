@@ -16,6 +16,11 @@ h3 {
 	color: variables.$primary-color;
 }
 
+section.hero .section-title,
+section.works .section-title{
+	color: variables.$text-primary-color;
+}
+
 // Header section
 header {
 	padding: 1.7rem 0 1.7rem;
@@ -108,12 +113,14 @@ section.hero {
 					border-radius: 25px;
 					background-color: variables.$primary-color;
 					padding: 0.7rem 1rem;
+					color: variables.$text-primary-color;
 				}
 
 				a.lets-talk-cta {
 					border-radius: 25px;
 					border: 2px solid variables.$text-secondary-color;
 					padding: 0.7rem 1rem;
+					color: variables.$text-primary-color;
 				}
 			}
 		}
@@ -229,12 +236,13 @@ section.works {
 
 			.work-description {
 				h2 {
-					font-size: 1.8rem;
+					font-size: 2rem;
 					margin: 0.7rem 0 0.7rem 0;
 				}
 
 				h3 {
 					margin-top: 0.7rem;
+					font-size: 1.6rem;
 				}
 
 				p {
@@ -589,7 +597,7 @@ a.floating-lets-talk-btn {
 					}
 
 					h3 {
-						font-size: 2.5rem;
+						font-size: 1.6rem;
 					}
 				}
 

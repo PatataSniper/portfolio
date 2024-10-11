@@ -6,12 +6,12 @@ html {
 
 body {
   background-color: #222222;
-  color: #FDFDFD;
+  color: #c9c9c9;
 }
 
 a {
   text-decoration: none;
-  color: #FDFDFD;
+  color: #c9c9c9;
   font-size: 1.6rem;
 }
 
@@ -77,6 +77,11 @@ h3 {
 .title {
   font-size: 2rem;
   color: #7280FC;
+}
+
+section.hero .section-title,
+section.works .section-title {
+  color: #eeeeee;
 }
 
 header {
@@ -159,11 +164,13 @@ section.hero .hero-card .hero-info .hero-info-cta a.proyects-cta {
   border-radius: 25px;
   background-color: #7280FC;
   padding: 0.7rem 1rem;
+  color: #eeeeee;
 }
 section.hero .hero-card .hero-info .hero-info-cta a.lets-talk-cta {
   border-radius: 25px;
   border: 2px solid #9AA2EA;
   padding: 0.7rem 1rem;
+  color: #eeeeee;
 }
 
 section.technologies {
@@ -183,7 +190,7 @@ section.technologies .secondary-background svg {
 section.technologies .wrapper > h2 {
   text-align: center;
   font-size: 2.5rem;
-  color: #090225;
+  color: #20193e;
   text-transform: uppercase;
 }
 section.technologies .wrapper .technologies-body {
@@ -253,11 +260,12 @@ section.works .wrapper .work-card img {
   border-radius: 12px;
 }
 section.works .wrapper .work-card .work-description h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 0.7rem 0 0.7rem 0;
 }
 section.works .wrapper .work-card .work-description h3 {
   margin-top: 0.7rem;
+  font-size: 1.6rem;
 }
 section.works .wrapper .work-card .work-description p {
   margin-bottom: 1rem;
@@ -378,10 +386,10 @@ a.floating-lets-talk-btn {
     background-color: unset;
   }
   section.technologies .wrapper .technologies-body .tech-description h3 {
-    color: #090225;
+    color: #20193e;
   }
   section.technologies .wrapper .technologies-body .tech-description p {
-    color: #090225;
+    color: #20193e;
   }
   section.technologies .wrapper .technologies-body :nth-child(1) {
     grid-area: tech-1;
@@ -496,7 +504,7 @@ a.floating-lets-talk-btn {
     margin-top: 0;
   }
   section.works .wrapper .work-card .work-description h3 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
   }
   section.works .wrapper .work-card img {
     width: 60%;
