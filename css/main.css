@@ -93,7 +93,7 @@ section.works .section-title {
 }
 
 header {
-  padding: 1.7rem 0 1.7rem;
+  padding: 1.7rem 1rem;
 }
 header .wrapper {
   display: flex;
@@ -293,7 +293,7 @@ section.works .wrapper .carousel .work-card:nth-of-type(n) {
 }
 
 footer {
-  padding-bottom: 1rem;
+  padding: 3rem 1rem;
 }
 footer .wrapper {
   display: grid;
