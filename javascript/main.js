@@ -20,6 +20,10 @@ class Portfolio {
 		return $('a', $('li', $('nav')));
 	}
 
+	get $heroCard() {
+		return $('.hero-card');
+	}
+
 	__init() {
 		ExtDebug.initTrace(this, this.__init);
 	}
@@ -28,6 +32,7 @@ class Portfolio {
 		ExtDebug.initTrace(this, this.__initUI);
 
 		this.__initEvents();
+		this.__initAnimations();
 	}
 
 	__initEvents() {
@@ -41,6 +46,13 @@ class Portfolio {
 
 		// Add click event to navigation buttons
 		this.$navButtons.click(this.onNavButtonClick.bind(this));
+	}
+
+	__initAnimations() {
+		// Set the hero card to be hidden and 100px above its final position,
+		// then animate it to its final position and show it
+		gsap.set(this.$heroCard, { y: -100, opacity: 0 });
+		gsap.to(this.$heroCard, { delay: 0.3, duration: 1, y: 0, opacity: 1, ease: "back.out(1.7)" });
 	}
 
 	showAside() {
