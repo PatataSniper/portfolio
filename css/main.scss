@@ -22,7 +22,7 @@ section.works .section-title {
 }
 
 .main-content {
-	padding-top: 8.1rem;
+	padding-top: 6rem;
 }
 
 // Header section
@@ -87,7 +87,7 @@ section.hero {
 	.hero-card {
 		border-radius: 10px;
 		padding: 1.2rem;
-		background-color: variables.$tertiary-background-color;
+		background-color: transparent;
 
 		img {
 			width: 100%;
@@ -391,6 +391,7 @@ a.floating-lets-talk-btn {
 		.hero-card {
 			display: flex;
 			gap: 4rem;
+			background-color: variables.$tertiary-background-color;
 
 			img {
 				width: 33%;
