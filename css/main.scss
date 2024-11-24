@@ -17,13 +17,22 @@ h3 {
 }
 
 section.hero .section-title,
-section.works .section-title{
+section.works .section-title {
 	color: variables.$text-primary-color;
+}
+
+.main-content {
+	padding-top: 8.1rem;
 }
 
 // Header section
 header {
 	padding: 1.7rem 1rem;
+	position: fixed;
+	z-index: 1;
+	background-color: variables.$header-background-color;
+	width: 100%;
+	top: 0;
 
 	.wrapper {
 		display: flex;
@@ -55,6 +64,7 @@ header {
 					display: flex;
 					flex-direction: column;
 					gap: 2rem;
+					margin: unset;
 				}
 			}
 		}
@@ -218,6 +228,7 @@ section.works {
 		// instead the .work-card class will have it, this will leave a separation
 		// gap between cards during carousel transition.
 		margin: 0;
+
 		>h2 {
 			text-align: center;
 			font-size: 2.5rem;
@@ -227,41 +238,42 @@ section.works {
 
 		.carousel {
 			margin-top: 3rem;
+
 			.nav-arrow {
 				display: none;
 			}
-	
+
 			.work-card {
 				display: flex;
 				flex-direction: column-reverse;
 				padding: 1.5rem 0;
 				margin: 0 1rem;
-	
+
 				img {
 					border-radius: 12px;
 				}
-	
+
 				.work-description {
 					h2 {
 						font-size: 2rem;
 						margin: 0.7rem 0 0.7rem 0;
 					}
-	
+
 					h3 {
 						margin-top: 0.7rem;
 						font-size: 1.6rem;
 					}
-	
+
 					p {
 						margin-bottom: 1rem;
 					}
-	
+
 					ul>li {
 						list-style: initial;
 					}
 				}
 			}
-	
+
 			.work-card:nth-of-type(n) {
 				padding-bottom: 3rem;
 			}
@@ -326,9 +338,20 @@ a.floating-lets-talk-btn {
 		font-size: 1.5rem;
 	}
 
+	.title {
+		font-size: 3rem;
+	}
+
+	.main-content {
+		padding-top: 0;
+	}
+
 	// Header section
 	header {
 		padding: 2.2rem 0 2.2rem;
+		position: relative;
+		background-color: transparent;
+		top: unset;
 
 		.wrapper {
 			aside {
@@ -492,14 +515,14 @@ a.floating-lets-talk-btn {
 				margin-left: 3rem;
 				margin-right: 3rem;
 			}
-			
+
 			.carousel {
-				
+
 				.work-card {
 					flex-direction: row;
 					gap: 1rem;
 					margin: 0 3rem;
-	
+
 					img {
 						width: 60%;
 						object-fit: cover;
@@ -533,7 +556,7 @@ a.floating-lets-talk-btn {
 // Desktop version
 @media only screen and (min-width: variables.$desktop-screen-size) {
 	.title {
-		font-size: 2.5rem;
+		font-size: 3rem;
 	}
 
 	.wrapper {
@@ -609,18 +632,18 @@ a.floating-lets-talk-btn {
 					flex-direction: row;
 					gap: 1rem;
 					margin: 0;
-	
+
 					.work-description {
 						h2 {
 							font-size: 3rem;
 							margin-top: 0;
 						}
-	
+
 						h3 {
 							font-size: 1.6rem;
 						}
 					}
-	
+
 					img {
 						width: 60%;
 						object-fit: cover;
