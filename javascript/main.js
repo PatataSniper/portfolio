@@ -4,6 +4,10 @@ class Portfolio {
 		this.__initUI();
 	}
 
+	get $title() {
+		return $("#main-title");
+	}
+
 	get $aside() {
 		return $("aside");
 	}
@@ -17,7 +21,7 @@ class Portfolio {
 	}
 
 	get $navButtons() {
-		return $('a', $('li', $('nav')));
+		return $("a", $("li", $("nav")));
 	}
 
 	__init() {
@@ -27,7 +31,22 @@ class Portfolio {
 	__initUI() {
 		ExtDebug.initTrace(this, this.__initUI);
 
+		// Initialize UI related events
 		this.__initEvents();
+
+		// After page load animations
+		this.__afterLoadAnimations();
+	}
+
+	__afterLoadAnimations() {
+		ExtDebug.initTrace(this, this.__afterLoadAnimations);
+
+		this.__randomizeTitleText();
+	}
+
+	__randomizeTitleText() {
+		// Randomize the text content of the title element, sequentially, for 2000 milliseconds
+		Portfolio.randomType(this.$title[0], "10", 4000, true);
 	}
 
 	__initEvents() {
@@ -54,8 +73,91 @@ class Portfolio {
 	onNavButtonClick(e) {
 		ExtDebug.log(e);
 
-		this.$navButtons.removeClass('active');
-		$(e.target).addClass('active');
+		this.$navButtons.removeClass("active");
+		$(e.target).addClass("active");
+	}
+
+		/**
+	 * Replaces the text content of an HTML element with random characters for a specified duration.
+	 * 
+	 * @param {HTMLElement} element - The HTML element whose text content will be replaced.
+	 * @param {string} characters - A string containing the characters to use for replacement.
+	 * @param {number} duration - The duration (in milliseconds) for which the text will be replaced.
+	 * @param {boolean} [sequential=false] - If true, replaces characters sequentially; otherwise, replaces all characters at once.
+	 */
+	static randomType(element, characters, duration, sequential = false) {
+			// Store the original text of the element
+			const originalText = element.innerText;
+	
+			// Convert the original text and characters string to arrays
+			let textArray = originalText.split("");
+			let charactersArray = characters.split("");
+	
+			// Get the start time
+			let startTime = new Date().getTime();
+			let interval;
+	
+			if (sequential) {
+					let currentIndex = 0;
+					let iterationCount = 0;
+	
+					// Set an interval to replace characters sequentially
+					interval = setInterval(function () {
+							iterationCount++;
+	
+							for (let i = 0; i < textArray.length; i++) {
+									// Para los caracteres ya revelados, usamos el texto original
+									if (i < currentIndex) {
+											textArray[i] = originalText[i];
+									} 
+									// Para los caracteres que faltan, usamos caracteres aleatorios
+									else {
+											textArray[i] =
+													charactersArray[
+															Math.floor(Math.random() * charactersArray.length)
+													];
+									}
+							}
+	
+							// Update the element's text content
+							element.innerText = textArray.join("");
+	
+							// Reveal the next character every 3 iterations
+							if (iterationCount % 3 === 0) {
+									currentIndex++;
+							}
+	
+							if (currentIndex > textArray.length) {
+									currentIndex = textArray.length;
+							}
+	
+							// Clear the interval and restore the original text if the duration has elapsed
+							if (new Date().getTime() - startTime >= duration) {
+									clearInterval(interval);
+									element.innerText = originalText;
+							}
+					}, 60);
+	
+					return;
+			}
+	
+			// Set an interval to replace all characters at once
+			interval = setInterval(function () {
+					for (let i = 0; i < textArray.length; i++) {
+							// Replace each character with a random character
+							textArray[i] =
+									charactersArray[
+											Math.floor(Math.random() * charactersArray.length)
+									];
+					}
+					// Update the element's text content
+					element.innerText = textArray.join("");
+					// Clear the interval and restore the original text if the duration has elapsed
+					if (new Date().getTime() - startTime >= duration) {
+							clearInterval(interval);
+							element.innerText = originalText;
+					}
+			}, 0);
 	}
 }
 

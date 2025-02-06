@@ -28,7 +28,7 @@
 <body>
     <header>
         <div class="wrapper">
-            <a href="#" class="title">SAÚL.MUÑOZ.GARCÍA</a>
+            <a href="#" id="main-title" class="title">SAÚL.MUÑOZ.GARCÍA</a>
             <aside>
                 <nav class="main">
                     <a class="close-btn" id="close-aside-btn" href="#">&times;</a>
@@ -452,7 +452,11 @@
 </body>
 
 <script type="text/javascript">
-    portfolio = new Portfolio();
+    // Prepare a portfolio object after the page is loaded
+    portfolio = null;
+    document.addEventListener('DOMContentLoaded', function () {
+        portfolio = new Portfolio();
+    });
 </script>
 
 </html>
