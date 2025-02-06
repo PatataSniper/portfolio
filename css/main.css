@@ -1,7 +1,11 @@
 html {
-  font-family: "Inconsolata", monospace;
+  font-family: "Poppins", sans-serif;
   font-size: 62.5%;
   font-weight: 300;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -18,7 +22,7 @@ a {
 p {
   margin: 0;
   line-height: 150%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 h2, h3 {
@@ -74,7 +78,7 @@ a.active::before {
 }
 h3 {
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #9AA2EA;
 }
 
@@ -92,8 +96,17 @@ section.works .section-title {
   color: #eeeeee;
 }
 
+.main-content {
+  padding-top: 6rem;
+}
+
 header {
-  padding: 1.7rem 0 1.7rem;
+  padding: 1.7rem 1rem;
+  position: fixed;
+  z-index: 1;
+  background-color: #313134;
+  width: 100%;
+  top: 0;
 }
 header .wrapper {
   display: flex;
@@ -106,7 +119,7 @@ header .wrapper aside {
   top: 0;
   transition: transform 0.6s;
   transform: translateX(100%);
-  background-color: #313134;
+  background-color: #3b3b3b;
   width: 69%;
   height: 100vh;
   z-index: 2;
@@ -124,6 +137,7 @@ header .wrapper aside nav ul {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: unset;
 }
 header .wrapper aside.show {
   transform: translateX(0);
@@ -139,7 +153,7 @@ section.hero {
 section.hero .hero-card {
   border-radius: 10px;
   padding: 1.2rem;
-  background-color: #24292F;
+  background-color: transparent;
 }
 section.hero .hero-card img {
   width: 100%;
@@ -293,7 +307,7 @@ section.works .wrapper .carousel .work-card:nth-of-type(n) {
 }
 
 footer {
-  padding-bottom: 1rem;
+  padding: 3rem 1rem;
 }
 footer .wrapper {
   display: grid;
@@ -338,8 +352,17 @@ a.floating-lets-talk-btn {
   h3 {
     font-size: 1.5rem;
   }
+  .title {
+    font-size: 3rem;
+  }
+  .main-content {
+    padding-top: 0;
+  }
   header {
     padding: 2.2rem 0 2.2rem;
+    position: relative;
+    background-color: transparent;
+    top: unset;
   }
   header .wrapper aside {
     position: relative;
@@ -370,6 +393,7 @@ a.floating-lets-talk-btn {
   section.hero .hero-card {
     display: flex;
     gap: 4rem;
+    background-color: #24292F;
   }
   section.hero .hero-card img {
     width: 33%;
@@ -478,7 +502,7 @@ a.floating-lets-talk-btn {
 }
 @media only screen and (min-width: 1100px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   .wrapper {
     margin: 0 auto;
