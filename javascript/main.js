@@ -70,6 +70,9 @@ class Portfolio {
 		// then animate it to its final position and show it
 		gsap.set(this.$heroCard, { y: -100, opacity: 0 });
 		gsap.to(this.$heroCard, { delay: 0.3, duration: 1, y: 0, opacity: 1, ease: "back.out(1.7)" });
+
+		// Randomize the text content of the title element
+		this.__randomizeTitleText();
 	}
 
 	showAside() {
