@@ -355,14 +355,8 @@ a.floating-lets-talk-btn {
   .title {
     font-size: 3rem;
   }
-  .main-content {
-    padding-top: 0;
-  }
   header {
-    padding: 2.2rem 0 2.2rem;
-    position: relative;
-    background-color: transparent;
-    top: unset;
+    padding: 1rem 0;
   }
   header .wrapper aside {
     position: relative;
