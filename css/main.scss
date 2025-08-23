@@ -156,7 +156,7 @@ section.technologies {
 	}
 
 	.wrapper {
-		>h2 {
+		> h2 {
 			text-align: center;
 			font-size: 2.5rem;
 			color: variables.$text-darker-color;
@@ -222,60 +222,92 @@ section.technologies {
 // Works section
 section.works {
 	padding: 1.7rem 0 2rem;
-
 	.wrapper {
-		// This will be the only section where the .wrapper will not have a margin,
-		// instead the .work-card class will have it, this will leave a separation
-		// gap between cards during carousel transition.
-		margin: 0;
-
-		>h2 {
+		> h2 {
 			text-align: center;
 			font-size: 2.5rem;
 			text-transform: uppercase;
 			margin: 3rem 1rem;
 		}
 
-		.carousel {
-			margin-top: 3rem;
+		> .work-items {
+			border-left: solid gray 1px;
 
-			.nav-arrow {
-				display: none;
-			}
+			> .work-item {
+				margin-bottom: 5rem;
 
-			.work-card {
-				display: flex;
-				flex-direction: column-reverse;
-				padding: 1.5rem 0;
-				margin: 0 1rem;
+				.work-item-header {
+					display: flex;
+					flex-direction: column;
+					gap: 1rem;
+					margin-bottom: 1.5rem;
+					padding-top: 1rem;
 
-				img {
-					border-radius: 12px;
-				}
+					> .date-container {
+						display: flex;
+						align-items: center;
 
-				.work-description {
-					h2 {
+						.date-line {
+							width: 2.5rem;
+							margin-right: 1rem;
+							height: 0.5px;
+							background-color: gray;
+							border-radius: 1px;
+						}
+					}
+
+					h3,
+					.brand-name {
+						margin: 0 0 0 3.5rem;
+						display: flex;
+						gap: 0.5rem;
+
+						.hemoeco-logo {
+							height: 2rem;
+						}
+					}
+
+					p[name="fisio-brand"] {
+						font-family: "Yesteryear", cursive;
 						font-size: 2rem;
-						margin: 0.7rem 0 0.7rem 0;
+						color: #fff4a2;
+					}
+
+					p[name="hemoeco-brand"] {
+						color: #c4b11b;
 					}
 
 					h3 {
-						margin-top: 0.7rem;
-						font-size: 1.6rem;
-					}
-
-					p {
-						margin-bottom: 1rem;
-					}
-
-					ul>li {
-						list-style: initial;
+						font-size: 2.5rem;
+						color: white;
 					}
 				}
-			}
 
-			.work-card:nth-of-type(n) {
-				padding-bottom: 3rem;
+				.work-item-content {
+					margin-left: 1.5rem;
+
+					p {
+						margin-bottom: 1.5rem;
+					}
+
+					.images-grid {
+						// display: grid;
+						// grid-template-columns: repeat(3, 1fr);
+						display: flex;
+						width: 100%;
+						// max-height: 30rem;
+						gap: 1rem;
+						flex-wrap: wrap;
+
+						img {
+							object-fit: cover;
+							border-radius: 10px;
+							flex: 1;
+							max-height: 20rem;
+							width: 66%;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -413,7 +445,6 @@ a.floating-lets-talk-btn {
 	// Technologies section
 	section.technologies {
 		.wrapper {
-
 			h2 {
 				text-align: left;
 			}
@@ -501,29 +532,6 @@ a.floating-lets-talk-btn {
 
 	// Works section
 	section.works {
-
-		.wrapper {
-
-			>h2 {
-				text-align: left;
-				margin-left: 3rem;
-				margin-right: 3rem;
-			}
-
-			.carousel {
-
-				.work-card {
-					flex-direction: row;
-					gap: 1rem;
-					margin: 0 3rem;
-
-					img {
-						width: 60%;
-						object-fit: cover;
-					}
-				}
-			}
-		}
 	}
 
 	// Footer section
@@ -564,7 +572,6 @@ a.floating-lets-talk-btn {
 		padding: 2.3rem 0 8rem;
 
 		.hero-card {
-
 			.secondary-hero-img {
 				display: initial;
 			}
@@ -585,20 +592,17 @@ a.floating-lets-talk-btn {
 
 	// Technologies section
 	section.technologies {
-
 		.secondary-background {
 			top: -12rem;
 		}
 
 		.wrapper {
-			>h2 {
+			> h2 {
 				font-size: 4rem;
 			}
 
 			.technologies-body {
-
 				.tech-description {
-
 					h3 {
 						font-size: 3rem;
 					}
@@ -609,40 +613,11 @@ a.floating-lets-talk-btn {
 
 	// Works section
 	section.works {
-
 		.wrapper {
-			// Gain specificity over the mobile version of this section's wrapper
-			margin: 0 auto;
-
-			>h2 {
+			> h2 {
 				font-size: 4rem;
 				margin-left: 0;
 				margin-right: 0;
-			}
-
-			.carousel {
-
-				.work-card {
-					flex-direction: row;
-					gap: 1rem;
-					margin: 0;
-
-					.work-description {
-						h2 {
-							font-size: 3rem;
-							margin-top: 0;
-						}
-
-						h3 {
-							font-size: 1.6rem;
-						}
-					}
-
-					img {
-						width: 60%;
-						object-fit: cover;
-					}
-				}
 			}
 		}
 	}

@@ -264,46 +264,77 @@ section.technologies .wrapper .technologies-body :nth-child(11) {
 section.works {
   padding: 1.7rem 0 2rem;
 }
-section.works .wrapper {
-  margin: 0;
-}
 section.works .wrapper > h2 {
   text-align: center;
   font-size: 2.5rem;
   text-transform: uppercase;
   margin: 3rem 1rem;
 }
-section.works .wrapper .carousel {
-  margin-top: 3rem;
+section.works .wrapper > .work-items {
+  border-left: solid gray 1px;
 }
-section.works .wrapper .carousel .nav-arrow {
-  display: none;
+section.works .wrapper > .work-items > .work-item {
+  margin-bottom: 5rem;
 }
-section.works .wrapper .carousel .work-card {
+section.works .wrapper > .work-items > .work-item .work-item-header {
   display: flex;
-  flex-direction: column-reverse;
-  padding: 1.5rem 0;
-  margin: 0 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
 }
-section.works .wrapper .carousel .work-card img {
-  border-radius: 12px;
+section.works .wrapper > .work-items > .work-item .work-item-header > .date-container {
+  display: flex;
+  align-items: center;
 }
-section.works .wrapper .carousel .work-card .work-description h2 {
+section.works .wrapper > .work-items > .work-item .work-item-header > .date-container .date-line {
+  width: 2.5rem;
+  margin-right: 1rem;
+  height: 0.5px;
+  background-color: gray;
+  border-radius: 1px;
+}
+section.works .wrapper > .work-items > .work-item .work-item-header h3,
+section.works .wrapper > .work-items > .work-item .work-item-header .brand-name {
+  margin: 0 0 0 3.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+section.works .wrapper > .work-items > .work-item .work-item-header h3 .hemoeco-logo,
+section.works .wrapper > .work-items > .work-item .work-item-header .brand-name .hemoeco-logo {
+  height: 2rem;
+}
+section.works .wrapper > .work-items > .work-item .work-item-header p[name=fisio-brand] {
+  font-family: "Yesteryear", cursive;
   font-size: 2rem;
-  margin: 0.7rem 0 0.7rem 0;
+  color: #fff4a2;
 }
-section.works .wrapper .carousel .work-card .work-description h3 {
-  margin-top: 0.7rem;
-  font-size: 1.6rem;
+section.works .wrapper > .work-items > .work-item .work-item-header p[name=hemoeco-brand] {
+  color: #c4b11b;
 }
-section.works .wrapper .carousel .work-card .work-description p {
-  margin-bottom: 1rem;
+section.works .wrapper > .work-items > .work-item .work-item-header h3 {
+  font-size: 2.5rem;
+  color: white;
 }
-section.works .wrapper .carousel .work-card .work-description ul > li {
-  list-style: initial;
+section.works .wrapper > .work-items > .work-item .work-item-content {
+  margin-left: 1.5rem;
 }
-section.works .wrapper .carousel .work-card:nth-of-type(n) {
-  padding-bottom: 3rem;
+section.works .wrapper > .work-items > .work-item .work-item-content p {
+  margin-bottom: 1.5rem;
+}
+section.works .wrapper > .work-items > .work-item .work-item-content .images-grid {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+section.works .wrapper > .work-items > .work-item .work-item-content .images-grid img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  flex: 1;
+  max-height: 20rem;
+  width: 66%;
 }
 
 footer {
@@ -466,21 +497,6 @@ a.floating-lets-talk-btn {
     flex-direction: column;
     justify-content: center;
   }
-  section.works .wrapper > h2 {
-    text-align: left;
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-  section.works .wrapper .carousel .work-card {
-    flex-direction: row;
-    gap: 1rem;
-    margin: 0 3rem;
-  }
-  section.works .wrapper .carousel .work-card img {
-    width: 60%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
   footer .wrapper .title {
     grid-column: 1/2;
     text-align: left;
@@ -527,29 +543,9 @@ a.floating-lets-talk-btn {
   section.technologies .wrapper .technologies-body .tech-description h3 {
     font-size: 3rem;
   }
-  section.works .wrapper {
-    margin: 0 auto;
-  }
   section.works .wrapper > h2 {
     font-size: 4rem;
     margin-left: 0;
     margin-right: 0;
-  }
-  section.works .wrapper .carousel .work-card {
-    flex-direction: row;
-    gap: 1rem;
-    margin: 0;
-  }
-  section.works .wrapper .carousel .work-card .work-description h2 {
-    font-size: 3rem;
-    margin-top: 0;
-  }
-  section.works .wrapper .carousel .work-card .work-description h3 {
-    font-size: 1.6rem;
-  }
-  section.works .wrapper .carousel .work-card img {
-    width: 60%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 }/*# sourceMappingURL=main.css.map */

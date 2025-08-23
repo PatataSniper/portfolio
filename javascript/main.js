@@ -42,12 +42,8 @@ class Portfolio {
 		// Initialize UI related events
 		this.__initEvents();
 
+		// Initialize UI animations
 		this.__initAnimations();
-	}
-
-	__randomizeTitleText() {
-		// Randomize the text content of the title element, sequentially, for 2000 milliseconds
-		Portfolio.randomType(this.$title[0], "10", 4000, true);
 	}
 
 	__initEvents() {
@@ -73,6 +69,11 @@ class Portfolio {
 
 		// Randomize the text content of the title element
 		this.__randomizeTitleText();
+	}
+
+	__randomizeTitleText() {
+		// Randomize the text content of the title element, sequentially, for 2000 milliseconds
+		Portfolio.randomType(this.$title[0], "10", 4000, true);
 	}
 
 	showAside() {
