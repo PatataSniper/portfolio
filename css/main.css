@@ -268,7 +268,7 @@ section.works .wrapper > h2 {
   text-align: center;
   font-size: 2.5rem;
   text-transform: uppercase;
-  margin: 3rem 1rem;
+  margin: 8rem 1rem;
 }
 section.works .wrapper > .work-items {
   border-left: solid gray 1px;
@@ -287,12 +287,15 @@ section.works .wrapper > .work-items > .work-item .work-item-header > .date-cont
   display: flex;
   align-items: center;
 }
-section.works .wrapper > .work-items > .work-item .work-item-header > .date-container .date-line {
+section.works .wrapper > .work-items > .work-item .work-item-header > .date-container .date-line-mobile {
   width: 2.5rem;
   margin-right: 1rem;
   height: 0.5px;
   background-color: gray;
   border-radius: 1px;
+}
+section.works .wrapper > .work-items > .work-item .work-item-header > .date-container .date-line {
+  display: none;
 }
 section.works .wrapper > .work-items > .work-item .work-item-header h3,
 section.works .wrapper > .work-items > .work-item .work-item-header .brand-name {
@@ -334,7 +337,10 @@ section.works .wrapper > .work-items > .work-item .work-item-content .images-gri
   border-radius: 10px;
   flex: 1;
   max-height: 20rem;
-  width: 66%;
+  width: 50%;
+}
+section.works .wrapper > .work-items > .work-item .work-item-content .images-grid img.small {
+  flex-grow: 0.5;
 }
 
 footer {
@@ -496,6 +502,48 @@ a.floating-lets-talk-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  section.works .wrapper > h2 {
+    text-align: left;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  section.works .wrapper .work-items {
+    border-left: none;
+  }
+  section.works .wrapper .work-items .work-item {
+    display: flex;
+    margin-bottom: 0;
+  }
+  section.works .wrapper .work-items .work-item .work-item-header {
+    flex: 0.5;
+    align-items: end;
+    min-width: 23rem;
+  }
+  section.works .wrapper .work-items .work-item .work-item-header .date-container .date-line-mobile {
+    display: none;
+  }
+  section.works .wrapper .work-items .work-item .work-item-header .date-container .date-line {
+    width: 4rem;
+    margin-left: 1rem;
+    height: 0.5px;
+    background-color: gray;
+    border-radius: 1px;
+    display: block;
+  }
+  section.works .wrapper .work-items .work-item .work-item-header h3 {
+    text-align: end;
+  }
+  section.works .wrapper .work-items .work-item .work-item-header h3,
+  section.works .wrapper .work-items .work-item .work-item-header .brand-name {
+    margin-right: 5rem;
+  }
+  section.works .wrapper .work-items .work-item .work-item-content {
+    border-left: solid gray 1px;
+    padding-left: 2rem;
+    flex: 1;
+    margin-left: 0;
+    padding-bottom: 8rem;
   }
   footer .wrapper .title {
     grid-column: 1/2;

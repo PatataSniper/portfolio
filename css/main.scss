@@ -227,7 +227,7 @@ section.works {
 			text-align: center;
 			font-size: 2.5rem;
 			text-transform: uppercase;
-			margin: 3rem 1rem;
+			margin: 8rem 1rem;
 		}
 
 		> .work-items {
@@ -247,12 +247,16 @@ section.works {
 						display: flex;
 						align-items: center;
 
-						.date-line {
+						.date-line-mobile {
 							width: 2.5rem;
 							margin-right: 1rem;
 							height: 0.5px;
 							background-color: gray;
 							border-radius: 1px;
+						}
+
+						.date-line {
+							display: none;
 						}
 					}
 
@@ -304,7 +308,11 @@ section.works {
 							border-radius: 10px;
 							flex: 1;
 							max-height: 20rem;
-							width: 66%;
+							width: 50%;
+						}
+
+						img.small {
+							flex-grow: 0.5;
 						}
 					}
 				}
@@ -532,6 +540,60 @@ a.floating-lets-talk-btn {
 
 	// Works section
 	section.works {
+		.wrapper {
+			> h2 {
+				text-align: left;
+				margin-left: 3rem;
+				margin-right: 3rem;
+			}
+
+			.work-items {
+				border-left: none;
+
+				.work-item {
+					display: flex;
+					margin-bottom: 0;
+
+					.work-item-header {
+						flex: 0.5;
+						align-items: end;
+						min-width: 23rem;
+
+						.date-container {
+							.date-line-mobile {
+								display: none;
+							}
+
+							.date-line {
+								width: 4rem;
+								margin-left: 1rem;
+								height: 0.5px;
+								background-color: gray;
+								border-radius: 1px;
+								display: block;
+							}
+						}
+
+						h3 {
+							text-align: end;
+						}
+
+						h3,
+						.brand-name {
+							margin-right: 5rem;
+						}
+					}
+
+					.work-item-content {
+						border-left: solid gray 1px;
+						padding-left: 2rem;
+						flex: 1;
+						margin-left: 0;
+						padding-bottom: 8rem;
+					}
+				}
+			}
+		}
 	}
 
 	// Footer section
