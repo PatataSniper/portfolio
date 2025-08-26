@@ -227,6 +227,7 @@ section.technologies .wrapper .technologies-body .tech-card {
   justify-content: space-between;
   border-radius: 10px;
   background-color: #24292F;
+  opacity: 0;
 }
 section.technologies .wrapper .technologies-body .tech-card .tech-logo-container {
   display: flex;
@@ -249,6 +250,7 @@ section.technologies .wrapper .technologies-body .tech-description {
   border-radius: 10px;
   background-color: #353536;
   padding: 10%;
+  opacity: 0;
 }
 section.technologies .wrapper .technologies-body .tech-description h3 {
   margin-top: 0;
@@ -505,7 +507,7 @@ a.floating-lets-talk-btn {
   }
   section.works .wrapper > h2 {
     text-align: left;
-    margin-left: 3rem;
+    margin-left: 5rem;
     margin-right: 3rem;
   }
   section.works .wrapper .work-items {
@@ -516,9 +518,8 @@ a.floating-lets-talk-btn {
     margin-bottom: 0;
   }
   section.works .wrapper .work-items .work-item .work-item-header {
-    flex: 0.5;
     align-items: end;
-    min-width: 23rem;
+    width: 25rem;
   }
   section.works .wrapper .work-items .work-item .work-item-header .date-container .date-line-mobile {
     display: none;
@@ -595,5 +596,8 @@ a.floating-lets-talk-btn {
     font-size: 4rem;
     margin-left: 0;
     margin-right: 0;
+  }
+  section.works .wrapper .work-items .work-item .work-item-header {
+    width: 28rem;
   }
 }/*# sourceMappingURL=main.css.map */

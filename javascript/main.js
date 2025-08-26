@@ -25,11 +25,30 @@ class Portfolio {
 	}
 
 	get $heroCard() {
-		return $('.hero-card');
+		return $(".hero-card");
 	}
 
 	get $heroCard() {
-		return $('.hero-card');
+		return $(".hero-card");
+	}
+
+	get $techCards() {
+		return $(".tech-card");
+	}
+
+	get $techDescriptions() {
+		return $(".tech-description");
+	}
+
+	__$getTechCards(line) {
+		switch (line) {
+			case 1:
+				return $(".tech-card.first-line");
+			case 2:
+				return $(".tech-card.second-line");
+			case 3:
+				return $(".tech-card.third-line");
+		}
 	}
 
 	__init() {
@@ -65,7 +84,55 @@ class Portfolio {
 		// Set the hero card to be hidden and 100px above its final position,
 		// then animate it to its final position and show it
 		gsap.set(this.$heroCard, { y: -100, opacity: 0 });
-		gsap.to(this.$heroCard, { delay: 0.3, duration: 1, y: 0, opacity: 1, ease: "back.out(1.7)" });
+		gsap.to(this.$heroCard, {
+			delay: 0.3,
+			duration: 1,
+			y: 0,
+			opacity: 1,
+			ease: "back.out(1.7)",
+		});
+
+		// Set the initial state of the tech-card elements
+		gsap.set(this.$techCards, { y: -100 });
+		gsap.set(this.$techDescriptions, { x: 100 });
+
+		let i = 1;
+		while (i <= 3) {
+			const $techCards = this.__$getTechCards(i);
+			gsap.to($techCards, {
+				y: 0,
+				opacity: 1,
+				ease: "back.out(1.7)",
+				duration: 0.8,
+				stagger: 0.2,
+				scrollTrigger: {
+					trigger: $techCards,
+					start: "center 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				},
+			});
+
+			i++;
+		}
+
+		for (const desc of this.$techDescriptions) {
+			gsap.to(desc, {
+				x: 0,
+				opacity: 1,
+				ease: "back.out(1.7)",
+				duration: 0.8,
+				delay: .6,
+				scrollTrigger: {
+					trigger: desc,
+					start: "top 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				},
+			});
+		}
 
 		// Randomize the text content of the title element
 		this.__randomizeTitleText();
@@ -74,6 +141,15 @@ class Portfolio {
 	__randomizeTitleText() {
 		// Randomize the text content of the title element, sequentially, for 2000 milliseconds
 		Portfolio.randomType(this.$title[0], "10", 4000, true);
+	}
+
+	__commonScrollTrigger(triggerElement) {
+		return {
+			trigger: triggerElement,
+			start: "top 20%",
+			markers: true,
+			toggleActions: "play none none reverse",
+		};
 	}
 
 	showAside() {
@@ -91,87 +167,89 @@ class Portfolio {
 		$(e.target).addClass("active");
 	}
 
-		/**
+	/**
 	 * Replaces the text content of an HTML element with random characters for a specified duration.
-	 * 
+	 *
 	 * @param {HTMLElement} element - The HTML element whose text content will be replaced.
 	 * @param {string} characters - A string containing the characters to use for replacement.
 	 * @param {number} duration - The duration (in milliseconds) for which the text will be replaced.
 	 * @param {boolean} [sequential=false] - If true, replaces characters sequentially; otherwise, replaces all characters at once.
 	 */
 	static randomType(element, characters, duration, sequential = false) {
-			// Store the original text of the element
-			const originalText = element.innerText;
-	
-			// Convert the original text and characters string to arrays
-			let textArray = originalText.split("");
-			let charactersArray = characters.split("");
-	
-			// Get the start time
-			let startTime = new Date().getTime();
-			let interval;
-	
-			if (sequential) {
-					let currentIndex = 0;
-					let iterationCount = 0;
-	
-					// Set an interval to replace characters sequentially
-					interval = setInterval(function () {
-							iterationCount++;
-	
-							for (let i = 0; i < textArray.length; i++) {
-									// Para los caracteres ya revelados, usamos el texto original
-									if (i < currentIndex) {
-											textArray[i] = originalText[i];
-									} 
-									// Para los caracteres que faltan, usamos caracteres aleatorios
-									else {
-											textArray[i] =
-													charactersArray[
-															Math.floor(Math.random() * charactersArray.length)
-													];
-									}
-							}
-	
-							// Update the element's text content
-							element.innerText = textArray.join("");
-	
-							// Reveal the next character every 3 iterations
-							if (iterationCount % 3 === 0) {
-									currentIndex++;
-							}
-	
-							if (currentIndex > textArray.length) {
-									currentIndex = textArray.length;
-							}
-	
-							// Clear the interval and restore the original text if the duration has elapsed
-							if (new Date().getTime() - startTime >= duration) {
-									clearInterval(interval);
-									element.innerText = originalText;
-							}
-					}, 60);
-	
-					return;
-			}
-	
-			// Set an interval to replace all characters at once
+		// Store the original text of the element
+		const originalText = element.innerText;
+
+		// Convert the original text and characters string to arrays
+		let textArray = originalText.split("");
+		let charactersArray = characters.split("");
+
+		// Get the start time
+		let startTime = new Date().getTime();
+		let interval;
+
+		if (sequential) {
+			let currentIndex = 0;
+			let iterationCount = 0;
+
+			// Set an interval to replace characters sequentially
 			interval = setInterval(function () {
-					for (let i = 0; i < textArray.length; i++) {
-							// Replace each character with a random character
-							textArray[i] =
-									charactersArray[
-											Math.floor(Math.random() * charactersArray.length)
-									];
+				iterationCount++;
+
+				for (let i = 0; i < textArray.length; i++) {
+					// Para los caracteres ya revelados, usamos el texto original
+					if (i < currentIndex) {
+						textArray[i] = originalText[i];
 					}
-					// Update the element's text content
-					element.innerText = textArray.join("");
-					// Clear the interval and restore the original text if the duration has elapsed
-					if (new Date().getTime() - startTime >= duration) {
-							clearInterval(interval);
-							element.innerText = originalText;
+					// Para los caracteres que faltan, usamos caracteres aleatorios
+					else {
+						textArray[i] =
+							charactersArray[
+								Math.floor(
+									Math.random() * charactersArray.length
+								)
+							];
 					}
-			}, 0);
+				}
+
+				// Update the element's text content
+				element.innerText = textArray.join("");
+
+				// Reveal the next character every 3 iterations
+				if (iterationCount % 3 === 0) {
+					currentIndex++;
+				}
+
+				if (currentIndex > textArray.length) {
+					currentIndex = textArray.length;
+				}
+
+				// Clear the interval and restore the original text if the duration has elapsed
+				if (new Date().getTime() - startTime >= duration) {
+					clearInterval(interval);
+					element.innerText = originalText;
+				}
+			}, 60);
+
+			return;
+		}
+
+		// Set an interval to replace all characters at once
+		interval = setInterval(function () {
+			for (let i = 0; i < textArray.length; i++) {
+				// Replace each character with a random character
+				textArray[i] =
+					charactersArray[
+						Math.floor(Math.random() * charactersArray.length)
+					];
+			}
+			// Update the element's text content
+			element.innerText = textArray.join("");
+			// Clear the interval and restore the original text if the duration has elapsed
+			if (new Date().getTime() - startTime >= duration) {
+				clearInterval(interval);
+				element.innerText = originalText;
+			}
+		}, 0);
 	}
 }
 

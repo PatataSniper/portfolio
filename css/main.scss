@@ -176,6 +176,7 @@ section.technologies {
 				justify-content: space-between;
 				border-radius: 10px;
 				background-color: variables.$tertiary-background-color;
+				opacity: 0; // To prepare the cards for the initial animation. Here to prevent FOUC
 
 				.tech-logo-container {
 					display: flex;
@@ -202,6 +203,7 @@ section.technologies {
 				border-radius: 10px;
 				background-color: variables.$card-footer-background-color;
 				padding: 10%;
+				opacity: 0;
 
 				h3 {
 					margin-top: 0;
@@ -543,7 +545,7 @@ a.floating-lets-talk-btn {
 		.wrapper {
 			> h2 {
 				text-align: left;
-				margin-left: 3rem;
+				margin-left: 5rem;
 				margin-right: 3rem;
 			}
 
@@ -555,9 +557,8 @@ a.floating-lets-talk-btn {
 					margin-bottom: 0;
 
 					.work-item-header {
-						flex: 0.5;
 						align-items: end;
-						min-width: 23rem;
+						width: 25rem;
 
 						.date-container {
 							.date-line-mobile {
@@ -680,6 +681,13 @@ a.floating-lets-talk-btn {
 				font-size: 4rem;
 				margin-left: 0;
 				margin-right: 0;
+			}
+			.work-items {
+				.work-item {
+					.work-item-header {
+						width: 28rem;
+					}
+				}
 			}
 		}
 	}
