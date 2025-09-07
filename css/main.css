@@ -344,6 +344,9 @@ section.works .wrapper > .work-items > .work-item .work-item-content .images-gri
 section.works .wrapper > .work-items > .work-item .work-item-content .images-grid img.small {
   flex-grow: 0.5;
 }
+section.works .wrapper > .work-items > .work-item .work-item-content .images-grid img.x-small {
+  width: 30%;
+}
 
 footer {
   padding: 3rem 1rem;
