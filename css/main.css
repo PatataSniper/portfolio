@@ -51,6 +51,10 @@ a.active::before {
   display: none;
 }
 
+.hide-on-load {
+  display: none;
+}
+
 .carousel-indicators {
   margin-bottom: 0;
 }
@@ -277,6 +281,7 @@ section.works .wrapper > .work-items {
 }
 section.works .wrapper > .work-items > .work-item {
   margin-bottom: 5rem;
+  min-height: 50vh;
 }
 section.works .wrapper > .work-items > .work-item .work-item-header {
   display: flex;
@@ -288,6 +293,7 @@ section.works .wrapper > .work-items > .work-item .work-item-header {
 section.works .wrapper > .work-items > .work-item .work-item-header > .date-container {
   display: flex;
   align-items: center;
+  opacity: 0;
 }
 section.works .wrapper > .work-items > .work-item .work-item-header > .date-container .date-line-mobile {
   width: 2.5rem;
@@ -304,6 +310,7 @@ section.works .wrapper > .work-items > .work-item .work-item-header .brand-name 
   margin: 0 0 0 3.5rem;
   display: flex;
   gap: 0.5rem;
+  opacity: 0;
 }
 section.works .wrapper > .work-items > .work-item .work-item-header h3 .hemoeco-logo,
 section.works .wrapper > .work-items > .work-item .work-item-header .brand-name .hemoeco-logo {
@@ -326,6 +333,7 @@ section.works .wrapper > .work-items > .work-item .work-item-content {
 }
 section.works .wrapper > .work-items > .work-item .work-item-content p {
   margin-bottom: 1.5rem;
+  opacity: 0;
 }
 section.works .wrapper > .work-items > .work-item .work-item-content .images-grid {
   display: flex;
@@ -340,6 +348,7 @@ section.works .wrapper > .work-items > .work-item .work-item-content .images-gri
   flex: 1;
   max-height: 20rem;
   width: 50%;
+  opacity: 0;
 }
 section.works .wrapper > .work-items > .work-item .work-item-content .images-grid img.small {
   flex-grow: 0.5;

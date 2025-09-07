@@ -55,6 +55,10 @@ a.active::before {
     display: none;
 }
 
+.hide-on-load {
+    display: none;
+}
+
 .carousel-indicators {
     margin-bottom: 0;
 }

@@ -134,6 +134,83 @@ class Portfolio {
 			});
 		}
 
+		// Set the initial state of the works header elements
+		gsap.set($('.work-item-header').children(), { x: -100 });
+		gsap.set($('.work-item-content').find('p'), { y: 100 });
+		gsap.set($('.images-grid').find('img'), { y: 100 });
+
+		for (const header of $('.work-item-header')) {
+			const $header = $(header);
+			let staggerDelay = 0;
+
+			gsap.to($header.children(), {
+				x: 0,
+				opacity: 1,
+				// ease: "back.out(1.7)",
+				duration: 0.8,
+				stagger: 0.2,
+				scrollTrigger: {
+					trigger: $header,
+					start: "top 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				},
+			});
+
+			// for (const c of $header.children()) {
+			// 	gsap.to(c, {
+			// 		x: 0,
+			// 		opacity: 1,
+			// 		// ease: "back.out(1.7)",
+			// 		duration: 0.8,
+			// 		delay: staggerDelay += 0.2,
+			// 		scrollTrigger: {
+			// 			trigger: $header,
+			// 			start: "top 70%",
+			// 			end: "bottom top",
+			// 			// markers: true,
+			// 			toggleActions: "play none none reverse",
+			// 		},
+			// 	});
+			// }
+		}
+
+		for (const content of $('.work-item-content')) {
+			const $content = $(content);
+			const $para = $content.find('p');
+			gsap.to($para, {
+				y: 0,
+				opacity: 1,
+				ease: "back.out(1.7)",
+				duration: 0.8,
+				stagger: 0.2,
+				scrollTrigger: {
+					trigger: $content,
+					start: "top 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				},
+			});
+
+			gsap.to($content.find('img'), {
+				y: 0,
+				opacity: 1,
+				ease: "back.out(1.7)",
+				duration: 0.8,
+				stagger: 0.2,
+				delay: 0.4,
+				scrollTrigger: {
+					trigger: $content,
+					start: "top 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				},
+			});
+		}
+
 		// Randomize the text content of the title element
 		this.__randomizeTitleText();
 	}
@@ -204,9 +281,9 @@ class Portfolio {
 					else {
 						textArray[i] =
 							charactersArray[
-								Math.floor(
-									Math.random() * charactersArray.length
-								)
+							Math.floor(
+								Math.random() * charactersArray.length
+							)
 							];
 					}
 				}
@@ -239,7 +316,7 @@ class Portfolio {
 				// Replace each character with a random character
 				textArray[i] =
 					charactersArray[
-						Math.floor(Math.random() * charactersArray.length)
+					Math.floor(Math.random() * charactersArray.length)
 					];
 			}
 			// Update the element's text content
