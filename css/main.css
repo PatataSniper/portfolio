@@ -293,7 +293,6 @@ section.works .wrapper > .work-items > .work-item .work-item-header {
 section.works .wrapper > .work-items > .work-item .work-item-header > .date-container {
   display: flex;
   align-items: center;
-  opacity: 0;
 }
 section.works .wrapper > .work-items > .work-item .work-item-header > .date-container .date-line-mobile {
   width: 2.5rem;
@@ -301,9 +300,14 @@ section.works .wrapper > .work-items > .work-item .work-item-header > .date-cont
   height: 0.5px;
   background-color: gray;
   border-radius: 1px;
+  opacity: 0;
 }
 section.works .wrapper > .work-items > .work-item .work-item-header > .date-container .date-line {
   display: none;
+  opacity: 0;
+}
+section.works .wrapper > .work-items > .work-item .work-item-header > .date-container p {
+  opacity: 0;
 }
 section.works .wrapper > .work-items > .work-item .work-item-header h3,
 section.works .wrapper > .work-items > .work-item .work-item-header .brand-name {
@@ -334,6 +338,7 @@ section.works .wrapper > .work-items > .work-item .work-item-content {
 section.works .wrapper > .work-items > .work-item .work-item-content p {
   margin-bottom: 1.5rem;
   opacity: 0;
+  text-align: justify;
 }
 section.works .wrapper > .work-items > .work-item .work-item-content .images-grid {
   display: flex;

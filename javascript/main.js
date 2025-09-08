@@ -135,15 +135,15 @@ class Portfolio {
 		}
 
 		// Set the initial state of the works header elements
-		gsap.set($('.work-item-header').children(), { x: -100 });
-		gsap.set($('.work-item-content').find('p'), { y: 100 });
-		gsap.set($('.images-grid').find('img'), { y: 100 });
+		gsap.set($('.work-item-header').find('.animate'), { x: -100 });
+		// gsap.set($('.work-item-header').find('.date-time-mobile .date-line'), { x: -100 });
+		gsap.set($('.work-item-content').find('.animate'), { y: 100 });
+		// gsap.set($('.images-grid').find('img'), { y: 100 });
 
 		for (const header of $('.work-item-header')) {
 			const $header = $(header);
-			let staggerDelay = 0;
 
-			gsap.to($header.children(), {
+			gsap.to($header.find('.animate'), {
 				x: 0,
 				opacity: 1,
 				ease: "back.out(1.7)",
@@ -156,6 +156,30 @@ class Portfolio {
 					// markers: true,
 					toggleActions: "play none none reverse",
 				},
+			});
+
+			gsap.to($header.find('.date-line'), {
+				opacity: 1,
+				duration: 0.8,
+				scrollTrigger: {
+					trigger: $header,
+					start: "top 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				}
+			});
+
+			gsap.to($header.find('.date-line-mobile'), {
+				opacity: 1,
+				duration: 0.8,
+				scrollTrigger: {
+					trigger: $header,
+					start: "top 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				}
 			});
 		}
 
@@ -185,7 +209,7 @@ class Portfolio {
 				stagger: 0.2,
 				delay: 0.4,
 				scrollTrigger: {
-					trigger: $content,
+					trigger: $content.find('.images-grid'),
 					start: "top 70%",
 					end: "bottom top",
 					// markers: true,
