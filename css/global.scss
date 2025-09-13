@@ -63,6 +63,26 @@ a.active::before {
     margin-bottom: 0;
 }
 
+.js-name {
+    color: #efd81d;
+}
+
+.html-name {
+    color: #ff5225;
+}
+
+.sass-name {
+    color: #ce6b9c;
+}
+
+.gsap-name {
+    color: #17df4e;
+}
+
+.gh-name {
+    color: #177be7;
+}
+
 // Tablet version
 @media only screen and (min-width: variables.$tablet-screen-size) {
     p {
