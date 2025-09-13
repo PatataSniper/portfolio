@@ -218,6 +218,23 @@ class Portfolio {
 			});
 		}
 
+		// Animate the closing text to appear with a slight delay with no easing
+		const $closingText = $('.closing-text-container');
+		gsap.set($closingText, { y: 50 });
+		gsap.to($closingText, {
+			delay: 0.3,
+			duration: 1,
+			y: 0,
+			opacity: 1,
+			scrollTrigger: {
+					trigger: $closingText,
+					start: "center 70%",
+					end: "bottom top",
+					// markers: true,
+					toggleActions: "play none none reverse",
+				},
+		});
+
 		// Randomize the text content of the title element
 		this.__randomizeTitleText();
 	}

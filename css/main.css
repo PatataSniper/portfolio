@@ -361,6 +361,16 @@ section.works .wrapper > .work-items > .work-item .work-item-content .images-gri
 section.works .wrapper > .work-items > .work-item .work-item-content .images-grid img.x-small {
   width: 30%;
 }
+section.works .wrapper .closing-text-container {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  opacity: 0;
+}
+section.works .wrapper .closing-text-container p {
+  max-width: 30rem;
+  text-align: center;
+}
 
 footer {
   padding: 3rem 1rem;

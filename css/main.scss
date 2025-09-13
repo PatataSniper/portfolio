@@ -335,6 +335,18 @@ section.works {
 				}
 			}
 		}
+
+		.closing-text-container {
+			display: grid;
+			height: 100vh;
+			place-content: center;
+			opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+
+			p {
+				max-width: 30rem;
+        text-align: center;
+			}
+		}
 	}
 }
 
