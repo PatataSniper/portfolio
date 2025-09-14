@@ -63,6 +63,9 @@ class Portfolio {
 
 		// Initialize UI animations
 		this.__initAnimations();
+
+		// Initialize scroll spy functionality
+		this.__initScrollSpy();
 	}
 
 	__initEvents() {
@@ -237,6 +240,33 @@ class Portfolio {
 
 		// Randomize the text content of the title element
 		this.__randomizeTitleText();
+	}
+
+	__initScrollSpy() {
+    const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
+    const navLinks = this.$navButtons; // Selecciona los enlaces de navegación
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Remueve la clase activa de todos los enlaces
+                    navLinks.removeClass('active');
+
+                    // Encuentra el enlace correspondiente a la sección visible
+                    const activeLink = $(`a[href="#${entry.target.id}"]`);
+                    activeLink.addClass('active');
+                }
+            });
+        },
+        {
+            root: null, // Usa el viewport completo
+            threshold: 0.6, // Detecta cuando el 60% de la sección está visible
+        }
+    );
+
+    // Observa cada sección
+    sections.forEach((section) => observer.observe(section));
 	}
 
 	__randomizeTitleText() {

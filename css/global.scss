@@ -64,23 +64,35 @@ a.active::before {
 }
 
 .js-name {
-    color: #efd81d;
+    color: #efd81d; // Javascript
 }
 
 .html-name {
-    color: #ff5225;
+    color: #ff5225; // Html
 }
 
 .sass-name {
-    color: #ce6b9c;
+    color: #ce6b9c; // Sass
 }
 
 .gsap-name {
-    color: #17df4e;
+    color: #17df4e; // GreenSock
 }
 
 .gh-name {
-    color: #177be7;
+    color: #177be7; // Github
+}
+
+.fs-name {
+    color: #fff4a2; // Fisio Serenity
+}
+
+.dc-name {
+    color: #42e3ff; // Design Course
+}
+
+.hr-name {
+    color: #c4b11b; // Hemoeco Renta
 }
 
 // Tablet version

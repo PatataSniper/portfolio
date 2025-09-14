@@ -79,6 +79,18 @@ a.active::before {
   color: #177be7;
 }
 
+.fs-name {
+  color: #fff4a2;
+}
+
+.dc-name {
+  color: #42e3ff;
+}
+
+.hr-name {
+  color: #c4b11b;
+}
+
 @media only screen and (min-width: 610px) {
   p {
     margin: 0;

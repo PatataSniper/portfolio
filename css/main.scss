@@ -140,7 +140,7 @@ section.hero {
 section.technologies {
 	position: relative;
 	background-color: variables.$secondary-background-color;
-	padding: 1.7rem 0 8rem;
+	padding: 8rem 0 8rem;
 
 	.secondary-background {
 		position: absolute;
@@ -346,6 +346,8 @@ section.works {
 				max-width: 30rem;
         text-align: center;
 				color: #c2c2c2;
+				margin-bottom: 2rem;
+				font-weight: 100;
 			}
 		}
 	}
