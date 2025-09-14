@@ -126,7 +126,7 @@ class Portfolio {
 				opacity: 1,
 				ease: "back.out(1.7)",
 				duration: 0.8,
-				delay: .6,
+				delay: 0.6,
 				scrollTrigger: {
 					trigger: desc,
 					start: "top 70%",
@@ -138,15 +138,15 @@ class Portfolio {
 		}
 
 		// Set the initial state of the works header elements
-		gsap.set($('.work-item-header').find('.animate'), { x: -100 });
+		gsap.set($(".work-item-header").find(".animate"), { x: -100 });
 		// gsap.set($('.work-item-header').find('.date-time-mobile .date-line'), { x: -100 });
-		gsap.set($('.work-item-content').find('.animate'), { y: 100 });
+		gsap.set($(".work-item-content").find(".animate"), { y: 100 });
 		// gsap.set($('.images-grid').find('img'), { y: 100 });
 
-		for (const header of $('.work-item-header')) {
+		for (const header of $(".work-item-header")) {
 			const $header = $(header);
 
-			gsap.to($header.find('.animate'), {
+			gsap.to($header.find(".animate"), {
 				x: 0,
 				opacity: 1,
 				ease: "back.out(1.7)",
@@ -161,7 +161,7 @@ class Portfolio {
 				},
 			});
 
-			gsap.to($header.find('.date-line'), {
+			gsap.to($header.find(".date-line"), {
 				opacity: 1,
 				duration: 0.8,
 				scrollTrigger: {
@@ -170,10 +170,10 @@ class Portfolio {
 					end: "bottom top",
 					// markers: true,
 					toggleActions: "play none none reverse",
-				}
+				},
 			});
 
-			gsap.to($header.find('.date-line-mobile'), {
+			gsap.to($header.find(".date-line-mobile"), {
 				opacity: 1,
 				duration: 0.8,
 				scrollTrigger: {
@@ -182,13 +182,13 @@ class Portfolio {
 					end: "bottom top",
 					// markers: true,
 					toggleActions: "play none none reverse",
-				}
+				},
 			});
 		}
 
-		for (const content of $('.work-item-content')) {
+		for (const content of $(".work-item-content")) {
 			const $content = $(content);
-			const $para = $content.find('p');
+			const $para = $content.find("p");
 			gsap.to($para, {
 				y: 0,
 				opacity: 1,
@@ -204,7 +204,7 @@ class Portfolio {
 				},
 			});
 
-			gsap.to($content.find('img'), {
+			gsap.to($content.find("img"), {
 				y: 0,
 				opacity: 1,
 				// ease: "back.out(1.7)",
@@ -212,7 +212,7 @@ class Portfolio {
 				stagger: 0.2,
 				delay: 0.4,
 				scrollTrigger: {
-					trigger: $content.find('.images-grid'),
+					trigger: $content.find(".images-grid"),
 					start: "top 70%",
 					end: "bottom top",
 					// markers: true,
@@ -222,7 +222,7 @@ class Portfolio {
 		}
 
 		// Animate the closing text to appear with a slight delay with no easing
-		const $closingText = $('.closing-text-container');
+		const $closingText = $(".closing-text-container");
 		gsap.set($closingText, { y: 50 });
 		gsap.to($closingText, {
 			delay: 0.3,
@@ -230,43 +230,73 @@ class Portfolio {
 			y: 0,
 			opacity: 1,
 			scrollTrigger: {
-					trigger: $closingText,
-					start: "center 70%",
-					end: "bottom top",
-					// markers: true,
-					toggleActions: "play none none reverse",
-				},
+				trigger: $closingText,
+				start: "center 70%",
+				end: "bottom top",
+				// markers: true,
+				toggleActions: "play none none reverse",
+			},
 		});
 
 		// Randomize the text content of the title element
 		this.__randomizeTitleText();
 	}
 
+	// Test scroll spy functionality
+	// __initScrollSpy() {
+	// 	const options = {
+	// 		root: document.querySelector("#scrollArea"),
+	// 		rootMargin: "0px",
+	// 		scrollMargin: "0px",
+	// 		threshold: 0.2,
+	// 	};
+
+	// 	const intersectionCallback = (entries) => {
+	// 		entries.forEach((entry) => {
+	// 			if (entry.isIntersecting) {
+	// 				let elem = entry.target;
+
+	// 				ExtDebug.log("Intersecting:", elem);
+	// 			}
+	// 		});
+	// 	};
+
+	// 	const observer = new IntersectionObserver(intersectionCallback, options);
+
+	// 	const target1 = document.querySelector("#hero");
+	// 	const target2 = document.querySelector("#technologies");
+	// 	const target3 = document.querySelector("#works");
+	// 	observer.observe(target1);
+	// 	observer.observe(target2);
+	// 	observer.observe(target3);
+	// }
+
 	__initScrollSpy() {
-    const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
-    const navLinks = this.$navButtons; // Selecciona los enlaces de navegación
+	  const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
+	  const navLinks = this.$navButtons; // Selecciona los enlaces de navegación
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // Remueve la clase activa de todos los enlaces
-                    navLinks.removeClass('active');
+	  const observer = new IntersectionObserver(
+	      (entries) => {
+	          entries.forEach((entry) => {
+	              if (entry.isIntersecting) {
+	                  // Remueve la clase activa de todos los enlaces
+	                  navLinks.removeClass('active');
 
-                    // Encuentra el enlace correspondiente a la sección visible
-                    const activeLink = $(`a[href="#${entry.target.id}"]`);
-                    activeLink.addClass('active');
-                }
-            });
-        },
-        {
-            root: null, // Usa el viewport completo
-            threshold: 0.6, // Detecta cuando el 60% de la sección está visible
-        }
-    );
+	                  // Encuentra el enlace correspondiente a la sección visible
+	                  const activeLink = $(`a[name="nav-to-${entry.target.id}"]`);
+	                  activeLink.addClass('active');
+	              }
+	          });
+	      },
+	      {
+	          root: null, // Usa el viewport completo
+	          threshold: 0.2, // Detecta cuando el 20% de la sección está visible
+						// scrollMargin: "0px 0px 50px 0px",
+	      }
+	  );
 
-    // Observa cada sección
-    sections.forEach((section) => observer.observe(section));
+	  // Observa cada sección
+	  sections.forEach((section) => observer.observe(section));
 	}
 
 	__randomizeTitleText() {
@@ -338,9 +368,9 @@ class Portfolio {
 					else {
 						textArray[i] =
 							charactersArray[
-							Math.floor(
-								Math.random() * charactersArray.length
-							)
+								Math.floor(
+									Math.random() * charactersArray.length
+								)
 							];
 					}
 				}
@@ -373,7 +403,7 @@ class Portfolio {
 				// Replace each character with a random character
 				textArray[i] =
 					charactersArray[
-					Math.floor(Math.random() * charactersArray.length)
+						Math.floor(Math.random() * charactersArray.length)
 					];
 			}
 			// Update the element's text content
