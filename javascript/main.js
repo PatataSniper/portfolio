@@ -296,6 +296,9 @@ class Portfolio {
 
 		this.$navButtons.removeClass("active");
 		$(e.target).addClass("active");
+
+		// Hide the aside menu if it's visible (for mobile devices)
+		this.hideAside();
 	}
 
 	/**
