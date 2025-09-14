@@ -244,6 +244,9 @@ section.technologies .secondary-background {
 section.technologies .secondary-background svg {
   width: 100%;
 }
+section.technologies .wrapper {
+  overflow: hidden;
+}
 section.technologies .wrapper > h2 {
   text-align: center;
   font-size: 2.5rem;
