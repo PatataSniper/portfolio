@@ -400,7 +400,7 @@ section.works .wrapper .closing-text-container {
   opacity: 0;
 }
 section.works .wrapper .closing-text-container p {
-  max-width: 30rem;
+  max-width: 50rem;
   text-align: center;
   color: #c2c2c2;
   margin-bottom: 2rem;
