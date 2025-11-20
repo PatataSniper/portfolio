@@ -486,7 +486,9 @@ a.floating-lets-talk-btn {
     display: none;
   }
   section.hero {
-    padding: 2.3rem 0 8rem;
+    display: flex;
+    height: 100vh;
+    align-items: center;
   }
   section.hero .hero-card {
     display: flex;
