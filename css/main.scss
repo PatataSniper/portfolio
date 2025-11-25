@@ -458,6 +458,25 @@ a.floating-lets-talk-btn {
 		height: 100vh;
 		align-items: center;
 
+		.main-icons-container {
+			display: flex;
+			position: fixed;
+			gap: 8rem;
+			z-index: -2;
+
+			// Asigna dinámicamente el valor de 'top' basado en el índice del elemento
+			@for $i from 1 through 10 {
+					&:nth-child(#{$i}) {
+							top: #{($i - 1) * 12}rem; // Calcula la posición: 8rem por cada elemento
+					}
+			}
+
+			.main-icon {
+				width: 6rem;
+				height: 6rem;
+			}
+		}
+
 		.hero-card {
 			display: flex;
 			gap: 4rem;

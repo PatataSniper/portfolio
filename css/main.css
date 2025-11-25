@@ -490,6 +490,46 @@ a.floating-lets-talk-btn {
     height: 100vh;
     align-items: center;
   }
+  section.hero .main-icons-container {
+    display: flex;
+    position: fixed;
+    gap: 8rem;
+    z-index: -2;
+  }
+  section.hero .main-icons-container:nth-child(1) {
+    top: 0rem;
+  }
+  section.hero .main-icons-container:nth-child(2) {
+    top: 12rem;
+  }
+  section.hero .main-icons-container:nth-child(3) {
+    top: 24rem;
+  }
+  section.hero .main-icons-container:nth-child(4) {
+    top: 36rem;
+  }
+  section.hero .main-icons-container:nth-child(5) {
+    top: 48rem;
+  }
+  section.hero .main-icons-container:nth-child(6) {
+    top: 60rem;
+  }
+  section.hero .main-icons-container:nth-child(7) {
+    top: 72rem;
+  }
+  section.hero .main-icons-container:nth-child(8) {
+    top: 84rem;
+  }
+  section.hero .main-icons-container:nth-child(9) {
+    top: 96rem;
+  }
+  section.hero .main-icons-container:nth-child(10) {
+    top: 108rem;
+  }
+  section.hero .main-icons-container .main-icon {
+    width: 6rem;
+    height: 6rem;
+  }
   section.hero .hero-card {
     display: flex;
     gap: 4rem;
