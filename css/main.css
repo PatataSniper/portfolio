@@ -307,6 +307,7 @@ section.technologies .wrapper .technologies-body :nth-child(11) {
 
 section.works {
   padding: 1.7rem 0 2rem;
+  background-color: #222222;
 }
 section.works .wrapper > h2 {
   text-align: center;
@@ -415,6 +416,7 @@ section.works .wrapper .closing-text-container p {
 
 footer {
   padding: 3rem 1rem;
+  background-color: #222222;
 }
 footer .wrapper {
   display: grid;
@@ -496,48 +498,61 @@ a.floating-lets-talk-btn {
   section.hero .main-icons-container {
     display: flex;
     position: fixed;
-    gap: 8rem;
+    gap: 6rem;
     z-index: -2;
   }
   section.hero .main-icons-container:nth-child(1) {
     top: 0rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(2) {
     top: 12rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(3) {
     top: 24rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(4) {
     top: 36rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(5) {
     top: 48rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(6) {
     top: 60rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(7) {
     top: 72rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(8) {
     top: 84rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(9) {
     top: 96rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(10) {
     top: 108rem;
+    left: -22rem;
   }
   section.hero .main-icons-container:nth-child(11) {
     top: 120rem;
+    left: -22rem;
   }
   section.hero .main-icons-container .main-icon {
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 8rem;
+    padding: 1rem;
+    border-radius: 5px;
   }
-  section.hero .main-icons-container .main-icon--highlight {
-    color: #9AA2EA;
+  section.hero .main-icons-container .main-icon + .highlight {
+    background-color: #444444;
   }
   section.hero .hero-card {
     display: flex;
@@ -620,6 +635,10 @@ a.floating-lets-talk-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  section.works .wrapper {
+    padding: 2rem;
+    background-color: #222222;
   }
   section.works .wrapper > h2 {
     text-align: left;

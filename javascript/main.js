@@ -251,8 +251,8 @@ class Portfolio {
 
 	__initMainIconsAnimation() {
 		const $containers = this.__$getMainIconsContainers();
-		const amplitude = 100;           // horizontal distance in px
-		const baseDuration = 5;       // seconds per swing
+		const amplitude = 282;          // horizontal distance in px
+		const baseDuration = 10;       	// seconds per swing
 		const baseDelay = 4;            // seconds before flipping direction
 		const flipStagger = 0.5;        // progressive flip delay between items
 
@@ -270,49 +270,57 @@ class Portfolio {
 			});
 
 			// After a few seconds, progressively flip direction for each item
-			// gsap.delayedCall(baseDelay + index * flipStagger, () => {
-			// 	tween.vars.x = -dir * amplitude;   // invert target direction
-			// 	tween.invalidate().restart();      // apply new vars cleanly
-			// });
+			gsap.delayedCall(baseDelay + index * flipStagger, () => {
+				tween.vars.x = -dir * amplitude;   // invert target direction
+				tween.invalidate().restart();      // apply new vars cleanly
+			});
 		});
 
 		// Highlight one icon per container, rotating with random timing
-
 		$containers.each((_, container) => {
 			const $icons = $(container).find(".main-icon");
 			if ($icons.length === 0) return;
 
-			let current = 0;
+			// Selecciona 3 índices aleatorios únicos
+			let current = [];
+			while (current.length < 3 && current.length < $icons.length) {
+				let idx = Math.floor(Math.random() * $icons.length);
+				if (!current.includes(idx)) current.push(idx);
+			}
 
-			// helper: apply highlight to current index
-			const applyHighlight = (idx) => {
+			// helper: aplica highlight a los índices dados
+			const applyHighlight = (indices) => {
 				$icons.each((i, icon) => {
-					// Clear previous styles/classes
-					icon.classList.remove("main-icon--highlight");
+					icon.classList.remove("highlight");
 				});
-				const target = $icons[idx];
-				target.classList.add("main-icon--highlight");
+				indices.forEach(idx => {
+					const target = $icons[idx];
+					if (target) target.classList.add("highlight");
+				});
 			};
 
-			// initial highlight
+			// highlight inicial
 			applyHighlight(current);
 
-			// loop with random intervals per switch
+			// rotación aleatoria de íconos
 			const scheduleNext = () => {
-				// random seconds between 2.5s and 6s
-				const nextDelay = 2.5 + Math.random() * 3.5;
-				gsap.delayedCall(nextDelay, () => {
-					// move to next icon
-					current = (current + 1) % $icons.length;
-					applyHighlight(current);
-					scheduleNext();
-				});
+				let next = [];
+				while (next.length < 3 && next.length < $icons.length) {
+					let idx = Math.floor(Math.random() * $icons.length);
+					if (!next.includes(idx)) next.push(idx);
+				}
+				current = next;
+				applyHighlight(current);
+
+				// tiempo aleatorio entre 2s y 4s
+				const nextDelay = 2 + Math.random() * 2;
+				gsap.delayedCall(nextDelay, scheduleNext);
 			};
 
 			scheduleNext();
 		});
 	}
-	
+
 	__initScrollSpy() {
 		const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
 		const navLinks = this.$navButtons; // Selecciona los enlaces de navegación

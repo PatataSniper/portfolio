@@ -162,7 +162,7 @@ section.technologies {
   .wrapper {
     overflow: hidden;
 
-    > h2 {
+    >h2 {
       text-align: center;
       font-size: 2.5rem;
       color: variables.$text-darker-color;
@@ -230,18 +230,20 @@ section.technologies {
 // Works section
 section.works {
   padding: 1.7rem 0 2rem;
+  background-color: variables.$primary-background-color;
+
   .wrapper {
-    > h2 {
+    >h2 {
       text-align: center;
       font-size: 2.5rem;
       text-transform: uppercase;
       margin: 8rem 1rem;
     }
 
-    > .work-items {
+    >.work-items {
       border-left: solid gray 1px;
 
-      > .work-item {
+      >.work-item {
         margin-bottom: 5rem;
         min-height: 50vh;
 
@@ -252,7 +254,7 @@ section.works {
           margin-bottom: 1.5rem;
           padding-top: 1rem;
 
-          > .date-container {
+          >.date-container {
             display: flex;
             align-items: center;
 
@@ -362,6 +364,7 @@ section.works {
 // Footer
 footer {
   padding: 3rem 1rem;
+  background-color: variables.$primary-background-color;
 
   .wrapper {
     display: grid;
@@ -465,24 +468,26 @@ a.floating-lets-talk-btn {
     .main-icons-container {
       display: flex;
       position: fixed;
-      gap: 8rem;
+      gap: 6rem;
       z-index: -2;
 
       // Asigna dinámicamente el valor de 'top' basado en el índice del elemento
       @for $i from 1 through 11 {
         &:nth-child(#{$i}) {
-          top: #{($i - 1) *
-            12}rem; // Calcula la posición: 8rem por cada elemento
+          top: #{($i - 1) * 12rem}; // Calcula la posición: 8rem por cada elemento
+          left: -22rem;
         }
       }
 
       .main-icon {
-        width: 6rem;
-        height: 6rem;
-      }
+        width: 8rem;
+        height: 8rem;
+        padding: 1rem;
+        border-radius: 5px;
 
-      .main-icon--highlight {
-        color: variables.$secondary-background-color;
+        +.highlight {
+          background-color: #444444;
+        }
       }
     }
 
@@ -606,7 +611,11 @@ a.floating-lets-talk-btn {
   // Works section
   section.works {
     .wrapper {
-      > h2 {
+      padding: 2rem;
+      background-color: variables.$primary-background-color;
+      // @include edge-fade(1rem);
+
+      >h2 {
         text-align: left;
         margin-left: 5rem;
         margin-right: 3rem;
@@ -723,7 +732,7 @@ a.floating-lets-talk-btn {
     }
 
     .wrapper {
-      > h2 {
+      >h2 {
         font-size: 4rem;
       }
 
@@ -740,11 +749,12 @@ a.floating-lets-talk-btn {
   // Works section
   section.works {
     .wrapper {
-      > h2 {
+      >h2 {
         font-size: 4rem;
         margin-left: 0;
         margin-right: 0;
       }
+
       .work-items {
         .work-item {
           .work-item-header {
