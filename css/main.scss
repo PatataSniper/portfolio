@@ -2,747 +2,756 @@
 @use "variables";
 
 h3 {
-	font-weight: 600;
-	font-size: 1.5rem;
-	color: variables.$text-secondary-color;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: variables.$text-secondary-color;
 }
 
 .wrapper {
-	margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 .title {
-	font-size: 2rem;
-	color: variables.$primary-color;
+  font-size: 2rem;
+  color: variables.$primary-color;
 }
 
 section.hero .section-title,
 section.works .section-title {
-	color: variables.$text-primary-color;
+  color: variables.$text-primary-color;
 }
 
 .main-content {
-	padding-top: 6rem;
+  padding-top: 6rem;
 }
 
 // Header section
 header {
-	padding: 1.7rem 1rem;
-	position: fixed;
-	z-index: 1;
-	background-color: variables.$header-background-color;
-	width: 100%;
-	top: 0;
+  padding: 1.7rem 1rem;
+  position: fixed;
+  z-index: 1;
+  background-color: variables.$header-background-color;
+  width: 100%;
+  top: 0;
 
-	.wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-		aside {
-			position: fixed;
-			right: 0;
-			top: 0;
-			transition: transform 0.6s;
-			transform: translateX(100%);
-			background-color: variables.$aside-background-color;
-			width: 69%;
-			height: 100vh;
-			z-index: 2;
+    aside {
+      position: fixed;
+      right: 0;
+      top: 0;
+      transition: transform 0.6s;
+      transform: translateX(100%);
+      background-color: variables.$aside-background-color;
+      width: 69%;
+      height: 100vh;
+      z-index: 2;
 
-			nav {
-				padding: 2rem;
-				display: flex;
-				flex-direction: column;
+      nav {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
 
-				a.close-btn {
-					font-size: 4rem;
-					align-self: end;
-				}
+        a.close-btn {
+          font-size: 4rem;
+          align-self: end;
+        }
 
-				ul {
-					display: flex;
-					flex-direction: column;
-					gap: 2rem;
-					margin: unset;
-				}
-			}
-		}
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          margin: unset;
+        }
+      }
+    }
 
-		aside.show {
-			transform: translateX(0);
-		}
+    aside.show {
+      transform: translateX(0);
+    }
 
-		svg {
-			width: 2.2rem;
-			height: 2rem;
-		}
-	}
+    svg {
+      width: 2.2rem;
+      height: 2rem;
+    }
+  }
 }
 
 // Hero section
 section.hero {
-	padding: 1.7rem 0 8rem;
+  padding: 1.7rem 0 8rem;
 
-	.hero-card {
-		border-radius: 10px;
-		padding: 1.2rem;
-		background-color: transparent;
+  .main-icons-container {
+    display: none;
+  }
 
-		img {
-			width: 100%;
-			object-fit: cover;
-			border-radius: 10px;
-		}
+  .hero-card {
+    border-radius: 10px;
+    padding: 1.2rem;
+    background-color: transparent;
 
-		.secondary-hero-img {
-			display: none;
-		}
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-		.hero-info {
-			text-align: center;
-			margin-top: 2rem;
+    .secondary-hero-img {
+      display: none;
+    }
 
-			.hero-info-main {
-				text-align: center;
+    .hero-info {
+      text-align: center;
+      margin-top: 2rem;
 
-				h2 {
-					font-weight: bold;
-					font-size: 2.2rem;
-				}
-			}
+      .hero-info-main {
+        text-align: center;
 
-			.hero-info-cta {
-				display: flex;
-				margin: 3rem 0 2rem;
-				justify-content: center;
-				gap: 10%;
+        h2 {
+          font-weight: bold;
+          font-size: 2.2rem;
+        }
+      }
 
-				a.proyects-cta {
-					border-radius: 25px;
-					background-color: variables.$primary-color;
-					padding: 0.7rem 1rem;
-					color: variables.$text-primary-color;
-				}
+      .hero-info-cta {
+        display: flex;
+        margin: 3rem 0 2rem;
+        justify-content: center;
+        gap: 10%;
 
-				a.lets-talk-cta {
-					border-radius: 25px;
-					border: 2px solid variables.$text-secondary-color;
-					padding: 0.7rem 1rem;
-					color: variables.$text-primary-color;
-				}
-			}
-		}
-	}
+        a.proyects-cta {
+          border-radius: 25px;
+          background-color: variables.$primary-color;
+          padding: 0.7rem 1rem;
+          color: variables.$text-primary-color;
+        }
+
+        a.lets-talk-cta {
+          border-radius: 25px;
+          border: 2px solid variables.$text-secondary-color;
+          padding: 0.7rem 1rem;
+          color: variables.$text-primary-color;
+        }
+      }
+    }
+  }
 }
 
 // Technologies section
 section.technologies {
-	position: relative;
-	background-color: variables.$secondary-background-color;
-	padding: 8rem 0 8rem;
+  position: relative;
+  background-color: variables.$secondary-background-color;
+  padding: 8rem 0 8rem;
 
-	.secondary-background {
-		position: absolute;
-		top: -8rem;
-		z-index: -1;
-		// left: -15rem;
-		width: 100%;
+  .secondary-background {
+    position: absolute;
+    top: -8rem;
+    z-index: -1;
+    // left: -15rem;
+    width: 100%;
 
-		svg {
-			width: 100%;
-			// height: 100%;
-		}
-	}
+    svg {
+      width: 100%;
+      // height: 100%;
+    }
+  }
 
-	.wrapper {
-		overflow: hidden;
+  .wrapper {
+    overflow: hidden;
 
-		> h2 {
-			text-align: center;
-			font-size: 2.5rem;
-			color: variables.$text-darker-color;
-			text-transform: uppercase;
-		}
+    > h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: variables.$text-darker-color;
+      text-transform: uppercase;
+    }
 
-		.technologies-body {
-			display: grid;
-			gap: 2rem;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(6, auto);
-			margin-top: 5rem;
+    .technologies-body {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, auto);
+      margin-top: 5rem;
 
-			.tech-card {
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				border-radius: 10px;
-				background-color: variables.$tertiary-background-color;
-				opacity: 0; // To prepare the cards for the initial animation. Here to prevent FOUC
+      .tech-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 10px;
+        background-color: variables.$tertiary-background-color;
+        opacity: 0; // To prepare the cards for the initial animation. Here to prevent FOUC
 
-				.tech-logo-container {
-					display: flex;
-					place-content: center;
-					padding: 10%;
+        .tech-logo-container {
+          display: flex;
+          place-content: center;
+          padding: 10%;
 
-					svg,
-					img {
-						width: 80%;
-					}
-				}
+          svg,
+          img {
+            width: 80%;
+          }
+        }
 
-				.tech-name {
-					text-align: center;
-					background-color: variables.$card-footer-background-color;
-					border-bottom-left-radius: 10px;
-					border-bottom-right-radius: 10px;
-					padding: 1.5rem;
-					font-size: 2rem;
-				}
-			}
+        .tech-name {
+          text-align: center;
+          background-color: variables.$card-footer-background-color;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          padding: 1.5rem;
+          font-size: 2rem;
+        }
+      }
 
-			.tech-description {
-				border-radius: 10px;
-				background-color: variables.$card-footer-background-color;
-				padding: 10%;
-				opacity: 0;
+      .tech-description {
+        border-radius: 10px;
+        background-color: variables.$card-footer-background-color;
+        padding: 10%;
+        opacity: 0;
 
-				h3 {
-					margin-top: 0;
-					font-size: 2rem;
-				}
-			}
+        h3 {
+          margin-top: 0;
+          font-size: 2rem;
+        }
+      }
 
-			:nth-child(5),
-			:nth-child(8),
-			:nth-child(11) {
-				grid-column: 1/3;
-				padding: 7%;
-			}
-		}
-	}
+      :nth-child(5),
+      :nth-child(8),
+      :nth-child(11) {
+        grid-column: 1/3;
+        padding: 7%;
+      }
+    }
+  }
 }
 
 // Works section
 section.works {
-	padding: 1.7rem 0 2rem;
-	.wrapper {
-		> h2 {
-			text-align: center;
-			font-size: 2.5rem;
-			text-transform: uppercase;
-			margin: 8rem 1rem;
-		}
+  padding: 1.7rem 0 2rem;
+  .wrapper {
+    > h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin: 8rem 1rem;
+    }
 
-		> .work-items {
-			border-left: solid gray 1px;
+    > .work-items {
+      border-left: solid gray 1px;
 
-			> .work-item {
-				margin-bottom: 5rem;
-				min-height: 50vh;
+      > .work-item {
+        margin-bottom: 5rem;
+        min-height: 50vh;
 
-				.work-item-header {
-					display: flex;
-					flex-direction: column;
-					gap: 1rem;
-					margin-bottom: 1.5rem;
-					padding-top: 1rem;
+        .work-item-header {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          padding-top: 1rem;
 
-					> .date-container {
-						display: flex;
-						align-items: center;
-						
-						.date-line-mobile {
-							width: 2.5rem;
-							margin-right: 1rem;
-							height: 0.5px;
-							background-color: gray;
-							border-radius: 1px;
-							opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
-						}
-						
-						.date-line {
-							display: none;
-							opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
-						}
-						
-						p{
-							opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
-						}
-					}
+          > .date-container {
+            display: flex;
+            align-items: center;
 
-					h3,
-					.brand-name {
-						margin: 0 0 0 3.5rem;
-						display: flex;
-						gap: 0.5rem;
-						opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+            .date-line-mobile {
+              width: 2.5rem;
+              margin-right: 1rem;
+              height: 0.5px;
+              background-color: gray;
+              border-radius: 1px;
+              opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+            }
 
-						.hemoeco-logo {
-							height: 2rem;
-						}
-					}
+            .date-line {
+              display: none;
+              opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+            }
 
-					p[name="fisio-brand"] {
-						font-family: "Yesteryear", cursive;
-						font-size: 2rem;
-						color: #fff4a2;
-					}
+            p {
+              opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+            }
+          }
 
-					p[name="hemoeco-brand"] {
-						color: #c4b11b;
-					}
+          h3,
+          .brand-name {
+            margin: 0 0 0 3.5rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
 
-					h3 {
-						font-size: 2.5rem;
-						color: white;
-					}
-				}
+            .hemoeco-logo {
+              height: 2rem;
+            }
+          }
 
-				.work-item-content {
-					margin-left: 1.5rem;
+          p[name="fisio-brand"] {
+            font-family: "Yesteryear", cursive;
+            font-size: 2rem;
+            color: #fff4a2;
+          }
 
-					p {
-						margin-bottom: 1.5rem;
-						opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
-						text-align: justify;
-					}
+          p[name="hemoeco-brand"] {
+            color: #c4b11b;
+          }
 
-					.images-grid {
-						// display: grid;
-						// grid-template-columns: repeat(3, 1fr);
-						display: flex;
-						width: 100%;
-						// max-height: 30rem;
-						gap: 1rem;
-						flex-wrap: wrap;
+          h3 {
+            font-size: 2.5rem;
+            color: white;
+          }
+        }
 
-						img {
-							object-fit: cover;
-							border-radius: 10px;
-							flex: 1;
-							max-height: 20rem;
-							width: 50%;
-							opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
-						}
+        .work-item-content {
+          margin-left: 1.5rem;
 
-						img.small {
-							flex-grow: 0.5;
-						}
+          p {
+            margin-bottom: 1.5rem;
+            opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+            text-align: justify;
+          }
 
-						img.x-small {
-							width: 30%;
-						}
-					}
-				}
-			}
-		}
+          .images-grid {
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            width: 100%;
+            // max-height: 30rem;
+            gap: 1rem;
+            flex-wrap: wrap;
 
-		.closing-text-container {
-			display: grid;
-			height: 100vh;
-			place-content: center;
-			opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+            img {
+              object-fit: cover;
+              border-radius: 10px;
+              flex: 1;
+              max-height: 20rem;
+              width: 50%;
+              opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+            }
 
-			p {
-				max-width: 50rem;
+            img.small {
+              flex-grow: 0.5;
+            }
+
+            img.x-small {
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+
+    .closing-text-container {
+      display: grid;
+      height: 100vh;
+      place-content: center;
+      opacity: 0; // To prepare for inicial animation. Here to prevent FOUC
+
+      p {
+        max-width: 50rem;
         text-align: center;
-				color: #c2c2c2;
-				margin-bottom: 2rem;
-				font-weight: 100;
-			}
-		}
-	}
+        color: #c2c2c2;
+        margin-bottom: 2rem;
+        font-weight: 100;
+      }
+    }
+  }
 }
 
 // Footer
 footer {
-	padding: 3rem 1rem;
+  padding: 3rem 1rem;
 
-	.wrapper {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, 1fr);
-		align-items: center;
-		gap: 1rem;
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
 
-		.title {
-			grid-column: 1/3;
-			text-align: center;
-		}
+    .title {
+      grid-column: 1/3;
+      text-align: center;
+    }
 
-		p {
-			font-size: 1.4rem;
-		}
+    p {
+      font-size: 1.4rem;
+    }
 
-		.social-media-links {
-			display: flex;
-			gap: 1rem;
+    .social-media-links {
+      display: flex;
+      gap: 1rem;
 
-			img {
-				width: 2.5rem;
-				height: 2.5rem;
-			}
-		}
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
 
-		:nth-child(even) {
-			justify-content: end;
-		}
-	}
+    :nth-child(even) {
+      justify-content: end;
+    }
+  }
 }
 
 // Let's talk floating button
 a.floating-lets-talk-btn {
-	width: 3.8rem;
-	height: 3.8rem;
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	z-index: 1;
-	display: none; // Temporary until decide how to not overlap elements
+  width: 3.8rem;
+  height: 3.8rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  display: none; // Temporary until decide how to not overlap elements
 }
 
 // Tablet version
 @media only screen and (min-width: variables.$tablet-screen-size) {
-	.wrapper {
-		margin: 0 3rem;
-	}
+  .wrapper {
+    margin: 0 3rem;
+  }
 
-	h3 {
-		font-size: 1.5rem;
-	}
+  h3 {
+    font-size: 1.5rem;
+  }
 
-	.title {
-		font-size: 3rem;
-	}
+  .title {
+    font-size: 3rem;
+  }
 
-	// Header section
-	header {
-		padding: 1rem 0;
+  // Header section
+  header {
+    padding: 1rem 0;
 
-		.wrapper {
-			aside {
-				position: relative;
-				height: auto;
-				right: unset;
-				top: unset;
-				transition: unset;
-				transform: unset;
-				width: auto;
-				background-color: unset;
+    .wrapper {
+      aside {
+        position: relative;
+        height: auto;
+        right: unset;
+        top: unset;
+        transition: unset;
+        transform: unset;
+        width: auto;
+        background-color: unset;
 
-				nav {
-					flex-direction: row;
-					padding: 0;
+        nav {
+          flex-direction: row;
+          padding: 0;
 
-					a.close-btn {
-						display: none;
-					}
+          a.close-btn {
+            display: none;
+          }
 
-					ul {
-						flex-direction: row;
-					}
-				}
-			}
+          ul {
+            flex-direction: row;
+          }
+        }
+      }
 
-			.hamburger-menu-btn {
-				display: none;
-			}
-		}
-	}
+      .hamburger-menu-btn {
+        display: none;
+      }
+    }
+  }
 
-	// Hero section
-	section.hero {
-		display: flex;
-		// flex-direction: column;
-		height: 100vh;
-		align-items: center;
+  // Hero section
+  section.hero {
+    display: flex;
+    // flex-direction: column;
+    height: 100vh;
+    align-items: center;
 
-		.main-icons-container {
-			display: flex;
-			position: fixed;
-			gap: 8rem;
-			z-index: -2;
+    .main-icons-container {
+      display: flex;
+      position: fixed;
+      gap: 8rem;
+      z-index: -2;
 
-			// Asigna dinámicamente el valor de 'top' basado en el índice del elemento
-			@for $i from 1 through 10 {
-					&:nth-child(#{$i}) {
-							top: #{($i - 1) * 12}rem; // Calcula la posición: 8rem por cada elemento
-					}
-			}
+      // Asigna dinámicamente el valor de 'top' basado en el índice del elemento
+      @for $i from 1 through 11 {
+        &:nth-child(#{$i}) {
+          top: #{($i - 1) *
+            12}rem; // Calcula la posición: 8rem por cada elemento
+        }
+      }
 
-			.main-icon {
-				width: 6rem;
-				height: 6rem;
-			}
-		}
+      .main-icon {
+        width: 6rem;
+        height: 6rem;
+      }
 
-		.hero-card {
-			display: flex;
-			gap: 4rem;
-			background-color: variables.$tertiary-background-color;
+      .main-icon--highlight {
+        color: variables.$secondary-background-color;
+      }
+    }
 
-			img {
-				width: 33%;
-				max-width: 28rem;
-			}
+    .hero-card {
+      display: flex;
+      gap: 4rem;
+      background-color: variables.$tertiary-background-color;
 
-			.hero-info {
-				align-self: center;
+      img {
+        width: 33%;
+        max-width: 28rem;
+      }
 
-				.hero-info-main {
-					text-align: left;
+      .hero-info {
+        align-self: center;
 
-					h2 {
-						font-size: 2.5rem;
-					}
-				}
+        .hero-info-main {
+          text-align: left;
 
-				.hero-info-cta {
-					justify-content: left;
-					gap: 2.2rem;
-				}
-			}
-		}
-	}
+          h2 {
+            font-size: 2.5rem;
+          }
+        }
 
-	// Technologies section
-	section.technologies {
-		.wrapper {
-			h2 {
-				text-align: left;
-			}
+        .hero-info-cta {
+          justify-content: left;
+          gap: 2.2rem;
+        }
+      }
+    }
+  }
 
-			.technologies-body {
-				grid-template-areas:
-					" tech-1 tech-2 frontend-tech-description"
-					" tech-3 tech-4 frontend-tech-description"
-					" tech-5 tech-6 backend-tech-description"
-					" tech-7 db-tech-description db-tech-description"
-					" tech-8 db-tech-description db-tech-description";
-				grid-template-rows: unset;
-				grid-template-columns: repeat(2, 25%) 1fr;
+  // Technologies section
+  section.technologies {
+    .wrapper {
+      h2 {
+        text-align: left;
+      }
 
-				.tech-description {
-					background-color: unset;
+      .technologies-body {
+        grid-template-areas:
+          " tech-1 tech-2 frontend-tech-description"
+          " tech-3 tech-4 frontend-tech-description"
+          " tech-5 tech-6 backend-tech-description"
+          " tech-7 db-tech-description db-tech-description"
+          " tech-8 db-tech-description db-tech-description";
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 25%) 1fr;
 
-					h3 {
-						color: variables.$text-darker-color;
-					}
+        .tech-description {
+          background-color: unset;
 
-					p {
-						color: variables.$text-darker-color;
-					}
-				}
+          h3 {
+            color: variables.$text-darker-color;
+          }
 
-				:nth-child(1) {
-					grid-area: tech-1;
-				}
+          p {
+            color: variables.$text-darker-color;
+          }
+        }
 
-				:nth-child(2) {
-					grid-area: tech-2;
-				}
+        :nth-child(1) {
+          grid-area: tech-1;
+        }
 
-				:nth-child(3) {
-					grid-area: tech-3;
-				}
+        :nth-child(2) {
+          grid-area: tech-2;
+        }
 
-				:nth-child(4) {
-					grid-area: tech-4;
-				}
+        :nth-child(3) {
+          grid-area: tech-3;
+        }
 
-				:nth-child(5) {
-					grid-area: frontend-tech-description;
-				}
+        :nth-child(4) {
+          grid-area: tech-4;
+        }
 
-				:nth-child(6) {
-					grid-area: tech-5;
-				}
+        :nth-child(5) {
+          grid-area: frontend-tech-description;
+        }
 
-				:nth-child(7) {
-					grid-area: tech-6;
-				}
+        :nth-child(6) {
+          grid-area: tech-5;
+        }
 
-				:nth-child(8) {
-					grid-area: backend-tech-description;
-				}
+        :nth-child(7) {
+          grid-area: tech-6;
+        }
 
-				:nth-child(9) {
-					grid-area: tech-7;
-				}
+        :nth-child(8) {
+          grid-area: backend-tech-description;
+        }
 
-				:nth-child(10) {
-					grid-area: tech-8;
-				}
+        :nth-child(9) {
+          grid-area: tech-7;
+        }
 
-				:nth-child(11) {
-					grid-area: db-tech-description;
-				}
+        :nth-child(10) {
+          grid-area: tech-8;
+        }
 
-				:nth-child(5),
-				:nth-child(8),
-				:nth-child(11) {
-					padding: 1.5rem;
-				}
+        :nth-child(11) {
+          grid-area: db-tech-description;
+        }
 
-				:nth-child(11) {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-				}
-			}
-		}
-	}
+        :nth-child(5),
+        :nth-child(8),
+        :nth-child(11) {
+          padding: 1.5rem;
+        }
 
-	// Works section
-	section.works {
-		.wrapper {
-			> h2 {
-				text-align: left;
-				margin-left: 5rem;
-				margin-right: 3rem;
-			}
+        :nth-child(11) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+  }
 
-			.work-items {
-				border-left: none;
+  // Works section
+  section.works {
+    .wrapper {
+      > h2 {
+        text-align: left;
+        margin-left: 5rem;
+        margin-right: 3rem;
+      }
 
-				.work-item {
-					display: flex;
-					margin-bottom: 0;
+      .work-items {
+        border-left: none;
 
-					.work-item-header {
-						align-items: end;
-						width: 25rem;
+        .work-item {
+          display: flex;
+          margin-bottom: 0;
 
-						.date-container {
-							.date-line-mobile {
-								display: none;
-							}
+          .work-item-header {
+            align-items: end;
+            width: 25rem;
 
-							.date-line {
-								width: 4rem;
-								margin-left: 1rem;
-								height: 0.5px;
-								background-color: gray;
-								border-radius: 1px;
-								display: block;
-							}
-						}
+            .date-container {
+              .date-line-mobile {
+                display: none;
+              }
 
-						h3 {
-							text-align: end;
-						}
+              .date-line {
+                width: 4rem;
+                margin-left: 1rem;
+                height: 0.5px;
+                background-color: gray;
+                border-radius: 1px;
+                display: block;
+              }
+            }
 
-						h3,
-						.brand-name {
-							margin-right: 5rem;
-						}
-					}
+            h3 {
+              text-align: end;
+            }
 
-					.work-item-content {
-						border-left: solid gray 1px;
-						padding-left: 2rem;
-						flex: 1;
-						margin-left: 0;
-						padding-bottom: 8rem;
-					}
-				}
-			}
-		}
-	}
+            h3,
+            .brand-name {
+              margin-right: 5rem;
+            }
+          }
 
-	// Footer section
-	footer {
-		.wrapper {
-			.title {
-				grid-column: 1/2;
-				text-align: left;
-			}
+          .work-item-content {
+            border-left: solid gray 1px;
+            padding-left: 2rem;
+            flex: 1;
+            margin-left: 0;
+            padding-bottom: 8rem;
+          }
+        }
+      }
+    }
+  }
 
-			nav.main {
-				display: initial;
+  // Footer section
+  footer {
+    .wrapper {
+      .title {
+        grid-column: 1/2;
+        text-align: left;
+      }
 
-				ul {
-					display: flex;
-					gap: 1.5rem;
-					justify-content: right;
-				}
-			}
-		}
-	}
+      nav.main {
+        display: initial;
+
+        ul {
+          display: flex;
+          gap: 1.5rem;
+          justify-content: right;
+        }
+      }
+    }
+  }
 }
 
 // Desktop version
 @media only screen and (min-width: variables.$desktop-screen-size) {
-	.title {
-		font-size: 3rem;
-	}
+  .title {
+    font-size: 3rem;
+  }
 
-	.wrapper {
-		margin: 0 auto;
-		padding: 0 5rem;
-		max-width: 120rem;
-	}
+  .wrapper {
+    margin: 0 auto;
+    padding: 0 5rem;
+    max-width: 120rem;
+  }
 
-	// Hero section
-	section.hero {
-		padding: 2.3rem 0 8rem;
+  // Hero section
+  section.hero {
+    padding: 2.3rem 0 8rem;
 
-		.hero-card {
-			.secondary-hero-img {
-				display: initial;
-			}
+    .hero-card {
+      .secondary-hero-img {
+        display: initial;
+      }
 
-			.hero-info {
-				align-self: center;
+      .hero-info {
+        align-self: center;
 
-				.hero-info-main {
-					text-align: center;
-				}
+        .hero-info-main {
+          text-align: center;
+        }
 
-				.hero-info-cta {
-					justify-content: center;
-				}
-			}
-		}
-	}
+        .hero-info-cta {
+          justify-content: center;
+        }
+      }
+    }
+  }
 
-	// Technologies section
-	section.technologies {
-		.secondary-background {
-			top: -12rem;
-		}
+  // Technologies section
+  section.technologies {
+    .secondary-background {
+      top: -12rem;
+    }
 
-		.wrapper {
-			> h2 {
-				font-size: 4rem;
-			}
+    .wrapper {
+      > h2 {
+        font-size: 4rem;
+      }
 
-			.technologies-body {
-				.tech-description {
-					h3 {
-						font-size: 3rem;
-					}
-				}
-			}
-		}
-	}
+      .technologies-body {
+        .tech-description {
+          h3 {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
 
-	// Works section
-	section.works {
-		.wrapper {
-			> h2 {
-				font-size: 4rem;
-				margin-left: 0;
-				margin-right: 0;
-			}
-			.work-items {
-				.work-item {
-					.work-item-header {
-						width: 28rem;
-					}
-				}
-			}
-		}
-	}
+  // Works section
+  section.works {
+    .wrapper {
+      > h2 {
+        font-size: 4rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .work-items {
+        .work-item {
+          .work-item-header {
+            width: 28rem;
+          }
+        }
+      }
+    }
+  }
 }

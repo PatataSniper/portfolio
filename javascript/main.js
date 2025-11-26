@@ -51,6 +51,10 @@ class Portfolio {
 		}
 	}
 
+	__$getMainIconsContainers() {
+		return $(".main-icons-container");
+	}
+
 	__init() {
 		ExtDebug.initTrace(this, this.__init);
 	}
@@ -240,63 +244,101 @@ class Portfolio {
 
 		// Randomize the text content of the title element
 		this.__randomizeTitleText();
+
+		// Init main section icons' animation
+		this.__initMainIconsAnimation();
 	}
 
-	// Test scroll spy functionality
-	// __initScrollSpy() {
-	// 	const options = {
-	// 		root: document.querySelector("#scrollArea"),
-	// 		rootMargin: "0px",
-	// 		scrollMargin: "0px",
-	// 		threshold: 0.2,
-	// 	};
+	__initMainIconsAnimation() {
+		const $containers = this.__$getMainIconsContainers();
+		const amplitude = 100;           // horizontal distance in px
+		const baseDuration = 5;       // seconds per swing
+		const baseDelay = 4;            // seconds before flipping direction
+		const flipStagger = 0.5;        // progressive flip delay between items
 
-	// 	const intersectionCallback = (entries) => {
-	// 		entries.forEach((entry) => {
-	// 			if (entry.isIntersecting) {
-	// 				let elem = entry.target;
+		// Create the initial pendulum tweens
+		$containers.each((index, el) => {
+			const dir = index % 2 === 0 ? -1 : 1; // even -> left, odd -> right
+			gsap.set(el, { x: 0 });
 
-	// 				ExtDebug.log("Intersecting:", elem);
-	// 			}
-	// 		});
-	// 	};
+			const tween = gsap.to(el, {
+				x: dir * amplitude,
+				duration: baseDuration,
+				ease: "sine.inOut",
+				yoyo: true,
+				repeat: -1
+			});
 
-	// 	const observer = new IntersectionObserver(intersectionCallback, options);
+			// After a few seconds, progressively flip direction for each item
+			// gsap.delayedCall(baseDelay + index * flipStagger, () => {
+			// 	tween.vars.x = -dir * amplitude;   // invert target direction
+			// 	tween.invalidate().restart();      // apply new vars cleanly
+			// });
+		});
 
-	// 	const target1 = document.querySelector("#hero");
-	// 	const target2 = document.querySelector("#technologies");
-	// 	const target3 = document.querySelector("#works");
-	// 	observer.observe(target1);
-	// 	observer.observe(target2);
-	// 	observer.observe(target3);
-	// }
+		// Highlight one icon per container, rotating with random timing
 
+		$containers.each((_, container) => {
+			const $icons = $(container).find(".main-icon");
+			if ($icons.length === 0) return;
+
+			let current = 0;
+
+			// helper: apply highlight to current index
+			const applyHighlight = (idx) => {
+				$icons.each((i, icon) => {
+					// Clear previous styles/classes
+					icon.classList.remove("main-icon--highlight");
+				});
+				const target = $icons[idx];
+				target.classList.add("main-icon--highlight");
+			};
+
+			// initial highlight
+			applyHighlight(current);
+
+			// loop with random intervals per switch
+			const scheduleNext = () => {
+				// random seconds between 2.5s and 6s
+				const nextDelay = 2.5 + Math.random() * 3.5;
+				gsap.delayedCall(nextDelay, () => {
+					// move to next icon
+					current = (current + 1) % $icons.length;
+					applyHighlight(current);
+					scheduleNext();
+				});
+			};
+
+			scheduleNext();
+		});
+	}
+	
 	__initScrollSpy() {
-	  const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
-	  const navLinks = this.$navButtons; // Selecciona los enlaces de navegación
+		const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
+		const navLinks = this.$navButtons; // Selecciona los enlaces de navegación
 
-	  const observer = new IntersectionObserver(
-	      (entries) => {
-	          entries.forEach((entry) => {
-	              if (entry.isIntersecting) {
-	                  // Remueve la clase activa de todos los enlaces
-	                  navLinks.removeClass('active');
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// Remueve la clase activa de todos los enlaces
+						navLinks.removeClass('active');
 
-	                  // Encuentra el enlace correspondiente a la sección visible
-	                  const activeLink = $(`a[name="nav-to-${entry.target.id}"]`);
-	                  activeLink.addClass('active');
-	              }
-	          });
-	      },
-	      {
-	          root: null, // Usa el viewport completo
-	          threshold: 0.2, // Detecta cuando el 20% de la sección está visible
-						// scrollMargin: "0px 0px 50px 0px",
-	      }
-	  );
+						// Encuentra el enlace correspondiente a la sección visible
+						const activeLink = $(`a[name="nav-to-${entry.target.id}"]`);
+						activeLink.addClass('active');
+					}
+				});
+			},
+			{
+				root: null, // Usa el viewport completo
+				threshold: 0.2, // Detecta cuando el 20% de la sección está visible
+				// scrollMargin: "0px 0px 50px 0px",
+			}
+		);
 
-	  // Observa cada sección
-	  sections.forEach((section) => observer.observe(section));
+		// Observa cada sección
+		sections.forEach((section) => observer.observe(section));
 	}
 
 	__randomizeTitleText() {
@@ -368,9 +410,9 @@ class Portfolio {
 					else {
 						textArray[i] =
 							charactersArray[
-								Math.floor(
-									Math.random() * charactersArray.length
-								)
+							Math.floor(
+								Math.random() * charactersArray.length
+							)
 							];
 					}
 				}
@@ -403,7 +445,7 @@ class Portfolio {
 				// Replace each character with a random character
 				textArray[i] =
 					charactersArray[
-						Math.floor(Math.random() * charactersArray.length)
+					Math.floor(Math.random() * charactersArray.length)
 					];
 			}
 			// Update the element's text content
@@ -416,11 +458,3 @@ class Portfolio {
 		}, 0);
 	}
 }
-
-// function showAside() {
-//   const aside = document.querySelector('aside');
-//   aside.classList.add('show');
-// }
-
-// const hamburgerBtn = document.querySelector('.hamburger-menu-btn');
-// hamburgerBtn.addEventListener('click', showAside);

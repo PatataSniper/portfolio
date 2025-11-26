@@ -186,6 +186,9 @@ header .wrapper svg {
 section.hero {
   padding: 1.7rem 0 8rem;
 }
+section.hero .main-icons-container {
+  display: none;
+}
 section.hero .hero-card {
   border-radius: 10px;
   padding: 1.2rem;
@@ -526,9 +529,15 @@ a.floating-lets-talk-btn {
   section.hero .main-icons-container:nth-child(10) {
     top: 108rem;
   }
+  section.hero .main-icons-container:nth-child(11) {
+    top: 120rem;
+  }
   section.hero .main-icons-container .main-icon {
     width: 6rem;
     height: 6rem;
+  }
+  section.hero .main-icons-container .main-icon--highlight {
+    color: #9AA2EA;
   }
   section.hero .hero-card {
     display: flex;
